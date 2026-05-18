@@ -1,0 +1,33 @@
+Table ID,File path,Section ID,Source Experiment ID(s),Main text / Appendix,Main message,Status
+S06_01_T01,Results_PaperReady_Tables/S06_01_T01_Dynamic_Regime_Performance__E4_E5_v01.csv,S06_01,E4;E5,Main text,Post-COVID UR RMSE 0.273 pp (5-seed mean) and the corresponding numbers for the three other evaluation windows.,READY
+S06_02_T01,Results_PaperReady_Tables/S06_02_T01_Internal_Control_Comparison__E6_v01.csv,S06_02,E6,Main text,Four-row ladder: V_Full 0.273 / V_LaborOnly 0.363 / V_Homogeneous 0.545 / V_Simplified 0.562 pp UR RMSE.,READY
+S06_02_T02,Results_PaperReady_Tables/S06_02_T02_Source_of_Advantage__E7_v01.csv,S06_02,E7,Main text,Within-experiment accounting decomposition: 94% heterogeneity / 6% mechanism / 31% household-block (overlapping) of the 0.289 pp total gain.,READY
+S06_03_T01,Results_PaperReady_Tables/S06_03_T01_Recalibrated_Ablation__E8_v01.csv,S06_03,E8,Main text,Six recalibrated ablations: V_NoSearch +0.81 / V_NoSLH +0.43 / V_NoLiquidity +0.11 / V_NoHousing −0.04 pp vs V_Full.,READY
+S06_03_T02,Results_PaperReady_Tables/S06_03_T02_Heterogeneity_Ladder__E9_v01.csv,S06_03,E9,Main text,Heterogeneity ladder L0..L6 with marginal gains per added dimension; housing step contributes the largest single drop.,READY
+S06_04_T01,Results_PaperReady_Tables/S06_04_T01_Dynamic_Benchmark_Comparison__E10_v01.csv,S06_04,E10,Main text,Twelve-model comparison on the post-COVID window; ABM rank 1 with margin 0.036 pp over the joint runner-up (No-change/ETS).,READY
+S06_05_T01,Results_PaperReady_Tables/S06_05_T01_Robustness_Summary__E11_E12_E13_v01.csv,S06_05,E11;E12;E13,Main text,Four robustness lenses; prediction CV across calibration methods 5.55 percent; 10 of 14 parameters weakly identified.,READY
+E01_T01,Results_By_Experiment/E01_Synthetic_Population_Construction/tables/E01_T01_Population_Summary_v01.csv,—,E1,Appendix A,Synthetic population size and source.,READY
+E01_T02,Results_By_Experiment/E01_Synthetic_Population_Construction/tables/E01_T02_Population_Diagnostics_v01.csv,—,E1,Appendix A,Diagnostics of the synthetic population against SCE marginals.,READY
+E02_T01,Results_By_Experiment/E02_Baseline_Stability_Check/tables/E02_T01_Stability_Summary_v01.csv,—,Appendix A,E2,Baseline stability summary (no diverging seeds across the 14-year window).,READY
+E03_T01,Results_By_Experiment/E03_Calibration_Setup/tables/E03_T01_Calibration_Protocol_v01.csv,—,E3,Appendix B,LHS calibration budget and 3-cal-seed protocol.,READY
+E03_T02,Results_By_Experiment/E03_Calibration_Setup/tables/E03_T02_Parameter_Bounds_v01.csv,—,E3,Appendix B,Bounds and active-parameter set per variant.,READY
+E04_T01,Results_By_Experiment/E04_Dynamic_Evaluation/tables/E04_T01_Dynamic_Metrics_v01.csv,S06_01,E4,Audit,Per-seed dynamic UR/LFPR/EPOP metrics over 2018-2026.,READY
+E05_T01,Results_By_Experiment/E05_Regime_Specific_Evaluation/tables/E05_T01_Regime_Metrics_v01.csv,S06_01,E5,Audit,Per-regime UR RMSE/MAE/bias/correlation.,READY
+E06_T01,Results_By_Experiment/E06_Internal_Control_Comparison/tables/E06_T01_Control_Comparison_v01.csv,S06_02,E6,Audit,Per-variant 5-seed mean UR/LFPR/EPOP metrics.,READY
+E06_T02,Results_By_Experiment/E06_Internal_Control_Comparison/tables/E06_T02_Regime_by_Variant_v01.csv,S06_02,E6,Audit,Regime × variant cross-tab.,READY
+E06_T03,Results_By_Experiment/E06_Internal_Control_Comparison/tables/E06_T03_Seed_Level_Variant_v01.csv,S06_02,E6,Audit,Per-seed per-variant rows.,READY
+E07_T01,Results_By_Experiment/E07_Source_of_Advantage_Decomposition/tables/E07_T01_Source_of_Advantage_v01.csv,S06_02,E7,Audit,Gains in pp and shares in % under the accounting decomposition.,READY
+E07_T02,Results_By_Experiment/E07_Source_of_Advantage_Decomposition/tables/E07_T02_Old_vs_New_Decomposition_v01.csv,S06_02,E7,Audit,Pre-recalibration vs recalibrated decomposition reconciliation.,READY
+E08_T01,Results_By_Experiment/E08_Heterogeneity_Ablation/tables/E08_T01_Recalibrated_Ablation_v01.csv,S06_03,E8,Audit,Per-variant post-COVID UR RMSE + Δ vs V_Full.,READY
+E08_T02,Results_By_Experiment/E08_Heterogeneity_Ablation/tables/E08_T02_Old_vs_New_Delta_v01.csv,S06_03,E8,Audit,Δ between projection and recalibration.,READY
+E08_T03,Results_By_Experiment/E08_Heterogeneity_Ablation/tables/E08_T03_Regime_by_Ablation_v01.csv,S06_03,E8,Audit,Regime × ablation cross-tab.,READY
+E09_T01,Results_By_Experiment/E09_Heterogeneity_Ladder/tables/E09_T01_Heterogeneity_Ladder_v01.csv,S06_03,E9,Audit,Per-level RMSE for L0..L6 with seed SD and alt orders G2/G3.,READY
+E10_T01,Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T01_Dynamic_Benchmark_Comparison_v01.csv,S06_04,E10,Audit,Main post-COVID 12-model comparison.,READY
+E10_T02,Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T02_Rolling_Benchmark_Comparison_v01.csv,S06_04,E10,Audit,Rolling-origin variant comparison.,READY
+E10_T03,Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T03_Regime_by_Benchmark_v01.csv,S06_04,E10,Audit,Regime × benchmark cross-tab.,READY
+E10_T04,Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T04_Benchmark_Specs_v01.csv,S06_04,E10,Audit,Specification + inputs + training window per benchmark.,READY
+E11_T01,Results_By_Experiment/E11_Training_Window_Sensitivity/tables/E11_T01_Training_Window_Sensitivity_v01.csv,S06_05,E11,Audit,Per-split UR RMSE for M0 plus 4 benchmarks.,READY
+E12_T01,Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/tables/E12_T01_Forecast_Horizon_Sensitivity_v01.csv,S06_05,E12,Audit,Per-horizon UR RMSE per model with log-log slope.,READY
+E12_T02,Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/tables/E12_T02_Agent_Count_Sensitivity_v01.csv,S06_05,E12,Audit,Per-N RMSE/SD/runtime with plateau flag.,READY
+E13_T01,Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/tables/E13_T01_Calibration_Method_Sensitivity_v01.csv,S06_05,E13,Audit,Per-method best-test UR + share advantage.,READY
+E13_T02,Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/tables/E13_T02_Parameter_Identification_v01.csv,S06_05,E13,Audit,Per-parameter CV with weakly-identified flags.,READY

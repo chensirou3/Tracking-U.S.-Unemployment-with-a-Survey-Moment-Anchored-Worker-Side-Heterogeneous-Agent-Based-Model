@@ -1,0 +1,11 @@
+dimension,key_result,supports,caveat
+Regime decomposition (revised §6.1),post-COVID 0.221 pp; COVID crisis 2.82 pp; pre-COVID 0.79 pp,post-COVID tracking only,crisis under-prediction (-2.07 pp); pre-COVID is +0.77 pp bias
+Re-calibrated controls (revised §6.2),Full 0.273 pp; LaborOnly 0.363; Homog 0.545; Simplified 0.562,Full best on post-COVID after separate recalibration,gap shrinks from 2.116 → 0.288 pp vs OLD shared-param controls
+Re-calibrated ablation (revised §6.3),No-Search +0.812 pp; No-Liq +0.105; No-Hous −0.036; No-SLH +0.429,Search Friction is the only robust standalone dimension,Liq/Hous gaps largely close; sign flips on Housing/Consumption
+"Stronger benchmarks (revised §6.4, dynamic post-COVID)",ABM 0.273; no-change 0.309; ETS 0.309; Beveridge 0.422,ABM rank 1 in post-COVID dynamic by 0.036 pp,margin within seed s.d. (±0.023 pp); rank 3/7 in other regimes
+Multi-seed dispersion (legacy R1),Phase 6 baseline UR RMSE CV 3.08% (0.221 ± 0.007 pp),simulation noise is small in absolute pp,§6.2 recalibrated V_Full seed s.d. is 0.023 pp; margin vs no-change ≈ s.d.
+Training-window sensitivity (legacy Pkg A),M0 OOS RMSE 0.245 ± 0.011 pp on 7 OOS-aligned splits,ranking and OOS RMSE band stable to train-window choice,computed on legacy M0 (not recalibrated controls); ranking re-statement only
+Forecast-horizon degradation (legacy Pkg B),M0 log-log RMSE slope −0.092 (shallowest of 8 models),no horizon explosion up to h = 36,used legacy benchmarks (AR/VAR/Beveridge/DMP); stronger benchmarks not re-run
+Agent-count plateau (legacy Pkg D),|ΔRMSE|<0.015 pp at N≥50k; default N=100k past plateau,agent count is not a tuning lever for the headline,invariant property of M0 class; applies to recalibrated runs as well
+Calibration-method sensitivity (legacy Pkg E),best-test UR RMSE 0.214–0.243 pp across 5 methods (CV 5.55%),predictive performance band is method-invariant,"band centred on legacy 0.22 pp, not the recalibrated 0.273 pp"
+Parameter weak identification (legacy Pkg A/E),0/14 params drift across 10 splits BUT 10/14 weakly identified across methods,priors are stable within method; predictions stable across methods,*individual* structural parameters not pinned down; report as bands

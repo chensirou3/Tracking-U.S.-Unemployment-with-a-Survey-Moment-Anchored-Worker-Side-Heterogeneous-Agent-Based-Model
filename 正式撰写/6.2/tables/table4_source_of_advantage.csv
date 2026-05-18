@@ -1,0 +1,9 @@
+row,definition,value_pp,share_percent,interpretation
+Full heterogeneous ABM,M0 baseline: full heterogeneity + full mechanism layer + household block,0.2211,,"lowest OOS UR RMSE, reference point"
+Homogeneous ABM,"D1: heterogeneity flattened, mechanisms + household block kept",0.5527,,isolates the contribution of heterogeneity
+Simplified ABM,D2: heterogeneity flattened AND advanced mechanisms disabled; matching kept,0.5607,,minimal internal baseline
+Labor-only ABM,"D3: full heterogeneity, household block disabled",0.4112,,isolates the contribution of the household block on UR
+Total Gain,"Simplified - Full (OOS UR RMSE, pp)",0.3397,100.0,gain delivered by going from minimal to full model
+Mechanism Gain,Simplified - Homogeneous (pp),0.008,2.4,gain from adding mechanism layer alone (no heterogeneity)
+Heterogeneity Gain,Homogeneous - Full (pp),0.3316,97.6,gain from adding 6-dim heterogeneity on top of full mechanisms
+Household Gain (on UR),LaborOnly - Full (pp),0.1901,,effect of household block on UR; +ve means household block helps UR

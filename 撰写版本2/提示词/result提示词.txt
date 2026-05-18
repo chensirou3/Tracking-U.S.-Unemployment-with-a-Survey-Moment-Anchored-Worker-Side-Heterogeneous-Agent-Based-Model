@@ -1,0 +1,1141 @@
+# Results Master Package Agent Prompt
+
+你现在的任务不是写论文正文，而是为论文的 **Section 6 Results** 生成一个完整、可核查、可追踪的 **Results Master Package / 结果总包**。
+
+论文标题：
+
+**Tracking U.S. Unemployment with a Survey-Moment-Anchored Worker-Side Heterogeneous Agent-Based Model**
+
+当前论文已经完成：
+
+1. Introduction
+2. Literature Review
+3. Model
+4. Data and Synthetic Population Construction
+5. Experimental Design
+
+现在要进入 Section 6 Results。但 Results 不能按照 13 个实验流水账式写，否则会变成项目记录。因此你的任务是：
+
+> **Run and archive by experiment.
+> Write and interpret by research question.**
+
+也就是说：
+
+1. 按照论文正式定义的 **E1–E13 实验体系**，完整整理每个实验的结果。
+2. 按照论文 Results 的分组结构 **S06_01–S06_05**，重新归纳核心结果。
+3. 最终输出两套结果包：
+
+   * 一套按照实验顺序，一个实验一个文件夹；
+   * 一套按照论文 Results 顺序，一个章节一个文件夹。
+4. 生成可用于写 Section 6 的 paper-ready tables、figures、claims、caveats、wording。
+
+---
+
+# 0. Global Rules
+
+请严格遵守：
+
+1. 不要直接写最终 Results 正文。
+2. 不要按 E1–E13 逐个写成论文正文。
+3. 结果必须同时按两种顺序整理：
+
+   * **Experiment-order results**：E1–E13 顺序；
+   * **Manuscript-order results**：S06_01–S06_05 分组顺序。
+4. 最终输出必须分成两个顶层文件夹：
+
+   * `Results_By_Experiment/`
+   * `Results_By_Section/`
+5. `Results_By_Experiment/` 下必须一个实验一个文件夹。
+6. `Results_By_Section/` 下必须一个 Results 小节一个文件夹。
+7. 所有数值必须注明单位：
+
+   * unemployment RMSE / MAE / bias 用 **percentage points (pp)**；
+   * correlation 用 decimal；
+   * shares / ratios 必须说明是 decimal 还是 percent。
+8. 如果某个结果缺失，标记 **MISSING**。
+9. 如果某个结果与其他文件冲突，标记 **INCONSISTENT**。
+10. 如果某个结果来自旧实验而不是最终实验，标记 **LEGACY / APPENDIX ONLY**。
+11. 不要使用 “R / revised” 作为正文展示编号。内部文件可以保留 EX04R、EX05R 等来源映射，但 manuscript-facing 报告必须使用 E1–E13。
+12. 不要把 source-of-advantage 解释成 causal decomposition。
+13. 不要把 ablation 解释成 structural mechanism identification。
+14. 不要把 parameter values 解释成 structural estimates。
+15. 不要写 “ABM dominates benchmarks”。只允许在证据支持时写 “competitive” 或 “modestly better”。
+16. 不要强调 COVID。特殊时期只作为 regime / scope diagnostic。
+17. 不要说 OOS 是 completely untouched。使用 conservative wording。
+18. 所有 figures 和 tables 必须使用双层编码：Section ID + Paper Experiment ID。
+19. 不要在 manuscript-facing 输出中出现 “audit / P1 report / revised / rerun because old version had problems” 等内部工作流语言。
+20. 内部 traceability 可以使用 EX 编码，但正文层只能使用 E 编码和 S06 编码。
+
+---
+
+# 1. Required Deliverables
+
+请生成以下顶层文件和文件夹：
+
+```text
+Results_Master_Package/
+  Results_Master_Package_Report.md
+  Results_Missing_Inconsistency_Checklist.md
+  Results_Claim_to_Evidence_Table.csv
+  Results_Table_Registry.csv
+  Results_Figure_Registry.csv
+  Results_Asset_Registry.csv
+  Results_Experiment_to_Section_Crosswalk.csv
+
+  Results_By_Experiment/
+    E01_Synthetic_Population_Construction/
+    E02_Baseline_Stability_Check/
+    E03_Calibration_Setup/
+    E04_Dynamic_Evaluation/
+    E05_Regime_Specific_Evaluation/
+    E06_Internal_Control_Comparison/
+    E07_Source_of_Advantage_Decomposition/
+    E08_Heterogeneity_Ablation/
+    E09_Heterogeneity_Ladder/
+    E10_Forecast_Benchmark_Comparison/
+    E11_Training_Window_Sensitivity/
+    E12_Forecast_Horizon_and_Agent_Count_Sensitivity/
+    E13_Calibration_Method_and_Parameter_ID_Sensitivity/
+
+  Results_By_Section/
+    S06_01_Dynamic_and_Regime_Specific_Performance/
+    S06_02_Internal_Controls_and_Source_of_Advantage/
+    S06_03_Recalibrated_Heterogeneity_Ablations/
+    S06_04_Forecast_Benchmark_Comparison/
+    S06_05_Robustness_and_Sensitivity/
+
+  Results_PaperReady_Tables/
+  Results_PaperReady_Figures/
+```
+
+如果无法真正创建文件夹，请在 Markdown 报告中完整模拟该文件夹结构，并输出每个文件夹应包含的文件清单。
+
+---
+
+# 2. Paper-Level Experiment IDs
+
+正式论文中使用以下 E1–E13 编号。不要在 manuscript-facing 文件名、标题或表格中暴露 EX04R / EX05R / EX07R 等内部编号。
+
+| Paper ID | Experiment                                                  | Purpose                                                                                                  |
+| -------- | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| E1       | Synthetic Population Construction                           | Builds the 100,000-agent worker population used in the simulations                                       |
+| E2       | Baseline Stability Check                                    | Checks whether the simulation engine produces stable monthly paths before formal evaluation              |
+| E3       | Calibration Setup                                           | Fits the model’s mechanism parameters on the training window using a multi-target loss function          |
+| E4       | Dynamic Evaluation                                          | Evaluates the full heterogeneous ABM under the main monthly dynamic tracking protocol                    |
+| E5       | Regime-Specific Evaluation                                  | Decomposes dynamic performance across different evaluation windows                                       |
+| E6       | Internal Control Comparison                                 | Compares the full model with separately calibrated lower-complexity variants                             |
+| E7       | Source-of-Advantage Decomposition                           | Assesses how much of the full model’s advantage is associated with heterogeneity versus other mechanisms |
+| E8       | Heterogeneity Ablation                                      | Removes or flattens selected heterogeneity dimensions and re-calibrates the remaining model              |
+| E9       | Heterogeneity Ladder                                        | Tests the incremental value of adding heterogeneity dimensions in a staged way                           |
+| E10      | Forecast Benchmark Comparison                               | Compares the ABM with standard statistical and labor-market forecasting benchmarks                       |
+| E11      | Training-Window Sensitivity                                 | Tests whether results depend on the calibration window                                                   |
+| E12      | Forecast-Horizon and Agent-Count Sensitivity                | Tests sensitivity to forecast horizon and number of simulated agents                                     |
+| E13      | Calibration-Method and Parameter-Identification Sensitivity | Tests sensitivity to calibration method and evaluates weak parameter identification                      |
+
+请在内部 registry 中保留 Paper ID 与内部 evidence ID 的映射，例如：
+
+| Paper ID | Internal Evidence ID | Notes                                        |
+| -------- | -------------------- | -------------------------------------------- |
+| E4       | EX04R                | Final dynamic evaluation source              |
+| E6       | EX08R                | Final separately calibrated controls         |
+| E8       | EX05R                | Final re-calibrated ablation                 |
+| E10      | EX07R                | Final benchmark comparison                   |
+| E13      | EX13 / EX06R         | Calibration sensitivity and weak-ID evidence |
+
+但这个映射只用于 evidence traceability，不要在 manuscript-facing summary 中强调 “revised”。
+
+---
+
+# 3. Results Section IDs
+
+最终 Section 6 Results 按以下结构组织：
+
+| Section ID | Results Section                           | Main Question                                                | Source Experiments |
+| ---------- | ----------------------------------------- | ------------------------------------------------------------ | ------------------ |
+| S06_01     | Dynamic and Regime-Specific Performance   | How well does the full model track unemployment dynamically? | E4, E5             |
+| S06_02     | Internal Controls and Source of Advantage | Does heterogeneity help after fair calibration?              | E6, E7             |
+| S06_03     | Re-calibrated Heterogeneity Ablations     | Which heterogeneity dimensions are least substitutable?      | E8, E9             |
+| S06_04     | Forecast Benchmark Comparison             | Is the ABM competitive with external forecasting benchmarks? | E10                |
+| S06_05     | Robustness and Sensitivity                | Are the main results stable across perturbations?            | E11, E12, E13      |
+
+---
+
+# 4. Folder Structure Requirements
+
+## 4.1 Results_By_Experiment
+
+必须创建以下文件夹，每个文件夹里都要包含一个 experiment-level report、tables、figures、raw-output-links、status 文件。
+
+```text
+Results_By_Experiment/
+  E01_Synthetic_Population_Construction/
+    E01_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E02_Baseline_Stability_Check/
+    E02_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E03_Calibration_Setup/
+    E03_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E04_Dynamic_Evaluation/
+    E04_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E05_Regime_Specific_Evaluation/
+    E05_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E06_Internal_Control_Comparison/
+    E06_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E07_Source_of_Advantage_Decomposition/
+    E07_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E08_Heterogeneity_Ablation/
+    E08_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E09_Heterogeneity_Ladder/
+    E09_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E10_Forecast_Benchmark_Comparison/
+    E10_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E11_Training_Window_Sensitivity/
+    E11_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E12_Forecast_Horizon_and_Agent_Count_Sensitivity/
+    E12_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+
+  E13_Calibration_Method_and_Parameter_ID_Sensitivity/
+    E13_Report.md
+    tables/
+    figures/
+    source_files.md
+    status.md
+```
+
+每个 `E##_Report.md` 必须使用下面格式：
+
+```markdown
+# E## — Experiment Name
+
+## Purpose
+
+## Source Files
+
+## Protocol
+
+## Main Outputs
+
+## Key Numbers
+
+## Use in Manuscript
+
+## Caveats
+
+## Status
+```
+
+Status 只能使用：
+
+* READY
+* READY WITH CAVEAT
+* MISSING
+* INCONSISTENT
+* APPENDIX ONLY
+
+---
+
+## 4.2 Results_By_Section
+
+必须创建以下文件夹，每个文件夹里都要包含 section-level report、paper-ready tables、paper-ready figures、wording bank、claim/caveat 文件。
+
+```text
+Results_By_Section/
+  S06_01_Dynamic_and_Regime_Specific_Performance/
+    S06_01_Report.md
+    paper_ready_tables/
+    paper_ready_figures/
+    wording_bank.md
+    claims_and_caveats.md
+    source_experiments.md
+
+  S06_02_Internal_Controls_and_Source_of_Advantage/
+    S06_02_Report.md
+    paper_ready_tables/
+    paper_ready_figures/
+    wording_bank.md
+    claims_and_caveats.md
+    source_experiments.md
+
+  S06_03_Recalibrated_Heterogeneity_Ablations/
+    S06_03_Report.md
+    paper_ready_tables/
+    paper_ready_figures/
+    wording_bank.md
+    claims_and_caveats.md
+    source_experiments.md
+
+  S06_04_Forecast_Benchmark_Comparison/
+    S06_04_Report.md
+    paper_ready_tables/
+    paper_ready_figures/
+    wording_bank.md
+    claims_and_caveats.md
+    source_experiments.md
+
+  S06_05_Robustness_and_Sensitivity/
+    S06_05_Report.md
+    paper_ready_tables/
+    paper_ready_figures/
+    wording_bank.md
+    claims_and_caveats.md
+    source_experiments.md
+```
+
+每个 `S06_XX_Report.md` 必须使用下面格式：
+
+```markdown
+# S06_XX — Section Title
+
+## Research Question
+
+## Source Experiments
+
+## Paper-Ready Tables
+
+## Paper-Ready Figures
+
+## Main Claim
+
+## Required Caveat
+
+## Suggested Results Wording
+
+## What Not To Claim
+
+## Missing / Inconsistency Notes
+```
+
+---
+
+# 5. File Naming Rules
+
+所有 paper-ready assets 必须使用 Section ID + Paper Experiment ID。
+
+## Tables
+
+```text
+S06_XX_T##_ShortDescription__E##_v01.csv
+```
+
+Examples:
+
+```text
+S06_01_T01_Dynamic_Regime_Performance__E4_E5_v01.csv
+S06_02_T01_Internal_Control_Comparison__E6_v01.csv
+S06_02_T02_Source_of_Advantage__E7_v01.csv
+S06_03_T01_Recalibrated_Ablation__E8_v01.csv
+S06_03_T02_Heterogeneity_Ladder__E9_v01.csv
+S06_04_T01_Dynamic_Benchmark_Comparison__E10_v01.csv
+S06_05_T01_Robustness_Summary__E11_E12_E13_v01.csv
+```
+
+## Figures
+
+```text
+S06_XX_F##_ShortDescription__E##_v01.png
+```
+
+Examples:
+
+```text
+S06_01_F01_Observed_vs_Simulated_UR__E4_v01.png
+S06_01_F02_Regime_RMSE_Bar__E5_v01.png
+S06_02_F01_Control_RMSE_Bar__E6_v01.png
+S06_03_F01_Ablation_RMSE_Bar__E8_v01.png
+S06_03_F02_Ladder_RMSE_Path__E9_v01.png
+S06_04_F01_Benchmark_RMSE_Bar__E10_v01.png
+S06_05_F01_Robustness_Dashboard__E11_E12_E13_v01.png
+```
+
+## Experiment-folder internal files
+
+Experiment-folder files can use E-only naming:
+
+```text
+E04_T01_Dynamic_Evaluation_Metrics_v01.csv
+E04_F01_Observed_vs_Simulated_UR_v01.png
+E04_Report.md
+```
+
+But if the asset is intended for Section 6 main text, it must also be copied or referenced using the S06 naming convention.
+
+---
+
+# 6. Experiment-Order Results Requirements
+
+请生成 `Results_By_Experiment_Report.md`，同时在每个 E 文件夹中生成独立 report。
+
+---
+
+## E1 Synthetic Population Construction
+
+必须整理：
+
+* population size；
+* generation script；
+* population file；
+* whether fixed across experiments；
+* whether SCE respondent rows were directly sampled；
+* whether survey weights were used；
+* key population summary diagnostics；
+* appendix figures/tables needed。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E01_Synthetic_Population_Construction/E01_Report.md
+Results_By_Experiment/E01_Synthetic_Population_Construction/tables/E01_T01_Population_Summary_v01.csv
+Results_By_Experiment/E01_Synthetic_Population_Construction/tables/E01_T02_Population_Diagnostics_v01.csv
+```
+
+---
+
+## E2 Baseline Stability Check
+
+必须整理：
+
+* baseline run period；
+* whether model generates stable monthly paths；
+* which outputs were checked；
+* whether any stability issue remains；
+* whether main text needs this or appendix only。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E02_Baseline_Stability_Check/E02_Report.md
+Results_By_Experiment/E02_Baseline_Stability_Check/tables/E02_T01_Stability_Summary_v01.csv
+```
+
+---
+
+## E3 Calibration Setup
+
+必须整理：
+
+* calibration window；
+* warm-up period；
+* 14 calibrated parameters；
+* parameter bounds；
+* selected values；
+* top-5 IQR bands；
+* loss function；
+* seeds；
+* calibration methods；
+* weak-ID preview, if relevant。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E03_Calibration_Setup/E03_Report.md
+Results_By_Experiment/E03_Calibration_Setup/tables/E03_T01_Calibration_Parameter_Table_v01.csv
+Results_By_Experiment/E03_Calibration_Setup/tables/E03_T02_Parameter_Bands_v01.csv
+Results_By_Experiment/E03_Calibration_Setup/tables/E03_T03_Loss_Function_Weights_v01.csv
+```
+
+---
+
+## E4 Dynamic Evaluation
+
+必须整理：
+
+* main dynamic protocol；
+* full model path；
+* main recent evaluation window: 2022-01 to 2026-02；
+* five-seed metrics；
+* UR RMSE, MAE, bias, correlation；
+* LFPR / EPOP secondary metrics；
+* observed vs simulated trajectory figures。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E04_Dynamic_Evaluation/E04_Report.md
+Results_By_Experiment/E04_Dynamic_Evaluation/tables/E04_T01_Dynamic_Evaluation_Metrics_v01.csv
+Results_By_Experiment/E04_Dynamic_Evaluation/figures/E04_F01_Observed_vs_Simulated_UR_v01.png
+```
+
+---
+
+## E5 Regime-Specific Evaluation
+
+必须整理：
+
+* pre-2020 stable window；
+* intermediate disruption window；
+* main recent evaluation window；
+* full post-2018 window；
+* metrics by window；
+* whether crisis / disruption window is only diagnostic；
+* figure/table outputs。
+
+不要强调 COVID 作为论文主线。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E05_Regime_Specific_Evaluation/E05_Report.md
+Results_By_Experiment/E05_Regime_Specific_Evaluation/tables/E05_T01_Regime_Performance_v01.csv
+Results_By_Experiment/E05_Regime_Specific_Evaluation/figures/E05_F01_Regime_RMSE_Bar_v01.png
+```
+
+---
+
+## E6 Internal Control Comparison
+
+必须整理 variants:
+
+* Full heterogeneous ABM；
+* Labor-only ABM；
+* Homogeneous ABM；
+* Simplified ABM。
+
+必须确认：
+
+* each variant separately calibrated；
+* same training window；
+* same loss function；
+* same evaluation protocol；
+* metrics by variant；
+* secondary metrics and trade-offs。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E06_Internal_Control_Comparison/E06_Report.md
+Results_By_Experiment/E06_Internal_Control_Comparison/tables/E06_T01_Control_Comparison_v01.csv
+Results_By_Experiment/E06_Internal_Control_Comparison/figures/E06_F01_Control_RMSE_Bar_v01.png
+```
+
+---
+
+## E7 Source-of-Advantage Decomposition
+
+必须整理：
+
+* Total Gain；
+* Heterogeneity-Associated Gain；
+* Mechanism-Associated Gain；
+* Household / constraint gain；
+* share calculations；
+* old vs new comparison, if available。
+
+必须标注：
+
+> within-experiment accounting, not causal decomposition.
+
+Required outputs:
+
+```text
+Results_By_Experiment/E07_Source_of_Advantage_Decomposition/E07_Report.md
+Results_By_Experiment/E07_Source_of_Advantage_Decomposition/tables/E07_T01_Source_of_Advantage_v01.csv
+Results_By_Experiment/E07_Source_of_Advantage_Decomposition/figures/E07_F01_Source_of_Advantage_Waterfall_v01.png
+```
+
+---
+
+## E8 Heterogeneity Ablation
+
+必须整理 ablations:
+
+* No Search Friction；
+* No Liquidity Fragility；
+* No Housing Mobility；
+* No Search-Liquidity-Housing Block；
+* No Consumption / Constraint variants, if available。
+
+必须确认：
+
+* ablations are re-calibrated；
+* remaining parameters allowed to compensate；
+* UR RMSE delta vs full；
+* LFPR / EPOP trade-offs；
+* old raw vs new re-calibrated comparison, if available。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E08_Heterogeneity_Ablation/E08_Report.md
+Results_By_Experiment/E08_Heterogeneity_Ablation/tables/E08_T01_Recalibrated_Ablation_v01.csv
+Results_By_Experiment/E08_Heterogeneity_Ablation/figures/E08_F01_Ablation_RMSE_Bar_v01.png
+```
+
+---
+
+## E9 Heterogeneity Ladder
+
+必须整理：
+
+* staged addition of heterogeneity dimensions；
+* ordering used；
+* metrics at each stage；
+* whether ladder is main text or appendix；
+* whether it supports incremental heterogeneity value。
+
+不要解释成 causal ordering of traits。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E09_Heterogeneity_Ladder/E09_Report.md
+Results_By_Experiment/E09_Heterogeneity_Ladder/tables/E09_T01_Heterogeneity_Ladder_v01.csv
+Results_By_Experiment/E09_Heterogeneity_Ladder/figures/E09_F01_Ladder_RMSE_Path_v01.png
+```
+
+---
+
+## E10 Forecast Benchmark Comparison
+
+必须整理 benchmark list:
+
+* Full heterogeneous ABM；
+* No-change / random walk；
+* Historical mean；
+* Drift；
+* ETS / exponential smoothing；
+* AR；
+* ARIMA；
+* VAR / Ridge VAR；
+* Beveridge-style；
+* DMP-style；
+* Flow-based unemployment model；
+* any others actually implemented。
+
+必须确认：
+
+* dynamic multi-step protocol；
+* rolling one-step protocol, if available；
+* main comparison uses dynamic protocol；
+* benchmark training windows；
+* ABM vs benchmark training-window difference；
+* RMSE ranking；
+* ABM lead vs best benchmark；
+* whether lead is modest。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E10_Forecast_Benchmark_Comparison/E10_Report.md
+Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T01_Dynamic_Benchmark_Comparison_v01.csv
+Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T02_Rolling_Benchmark_Comparison_v01.csv
+Results_By_Experiment/E10_Forecast_Benchmark_Comparison/figures/E10_F01_Benchmark_RMSE_Bar_v01.png
+```
+
+---
+
+## E11 Training-Window Sensitivity
+
+必须整理：
+
+* alternative training windows；
+* metrics under each；
+* whether main conclusion survives；
+* caveats。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E11_Training_Window_Sensitivity/E11_Report.md
+Results_By_Experiment/E11_Training_Window_Sensitivity/tables/E11_T01_Training_Window_Sensitivity_v01.csv
+Results_By_Experiment/E11_Training_Window_Sensitivity/figures/E11_F01_Training_Window_Sensitivity_v01.png
+```
+
+---
+
+## E12 Forecast-Horizon and Agent-Count Sensitivity
+
+必须整理：
+
+### Forecast horizon
+
+* horizons tested；
+* performance by horizon；
+* whether performance decays；
+* figures。
+
+### Agent count
+
+* agent counts tested；
+* convergence / plateau；
+* whether 100,000 agents is sufficient；
+* figures。
+
+Required outputs:
+
+```text
+Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/E12_Report.md
+Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/tables/E12_T01_Forecast_Horizon_Sensitivity_v01.csv
+Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/tables/E12_T02_Agent_Count_Sensitivity_v01.csv
+Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/figures/E12_F01_Forecast_Horizon_Sensitivity_v01.png
+Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/figures/E12_F02_Agent_Count_Convergence_v01.png
+```
+
+---
+
+## E13 Calibration-Method and Parameter-Identification Sensitivity
+
+必须整理：
+
+* calibration methods used；
+* metrics by method；
+* whether full model remains competitive；
+* weak-ID threshold；
+* weakly identified parameters；
+* stable parameters；
+* top-5 candidate dispersion；
+* test RMSE stability across top candidates。
+
+必须明确：
+
+> parameter values are fitted simulation quantities, not structural estimates.
+
+Required outputs:
+
+```text
+Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/E13_Report.md
+Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/tables/E13_T01_Calibration_Method_Sensitivity_v01.csv
+Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/tables/E13_T02_Parameter_Identification_v01.csv
+Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/figures/E13_F01_Calibration_Method_Sensitivity_v01.png
+Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/figures/E13_F02_Parameter_ID_Heatmap_v01.png
+```
+
+---
+
+# 7. Manuscript-Order Results Requirements
+
+请生成 `Results_By_Manuscript_Section_Report.md`，同时在每个 S06 文件夹中生成独立 section report。
+
+---
+
+## S06_01 Dynamic and Regime-Specific Performance
+
+Source experiments: E4, E5.
+
+必须回答：
+
+1. full heterogeneous ABM 在 recent evaluation window 的 UR RMSE 是多少？
+2. five-seed mean 是多少？
+3. MAE、bias、correlation 是多少？
+4. LFPR / EPOP 表现如何？
+5. 早期 stable window / disruption window / recent window 有何差异？
+6. 为什么 recent window 是 headline？
+7. 为什么 regime decomposition 是 diagnostic，不是论文主线？
+
+Required table:
+
+```text
+Results_By_Section/S06_01_Dynamic_and_Regime_Specific_Performance/paper_ready_tables/S06_01_T01_Dynamic_Regime_Performance__E4_E5_v01.csv
+```
+
+Columns:
+
+| Window | Period | Months | UR RMSE pp | UR MAE pp | UR Bias pp | UR Corr | LFPR RMSE pp | EPOP RMSE pp | Interpretation |
+| ------ | ------ | -----: | ---------: | --------: | ---------: | ------: | -----------: | -----------: | -------------- |
+
+Required figures:
+
+```text
+Results_By_Section/S06_01_Dynamic_and_Regime_Specific_Performance/paper_ready_figures/S06_01_F01_Observed_vs_Simulated_UR__E4_v01.png
+Results_By_Section/S06_01_Dynamic_and_Regime_Specific_Performance/paper_ready_figures/S06_01_F02_Regime_RMSE_Bar__E5_v01.png
+```
+
+Suggested main claim format:
+
+> The full heterogeneous ABM tracks monthly unemployment with sub-percentage-point error in the main recent evaluation window.
+
+Do not claim:
+
+> The model forecasts all regimes equally well.
+
+---
+
+## S06_02 Internal Controls and Source of Advantage
+
+Source experiments: E6, E7.
+
+必须回答：
+
+1. Full / Labor-only / Homogeneous / Simplified 的 UR RMSE 各是多少？
+2. 每个 control 是否 separately calibrated？
+3. full model 是否最好？
+4. advantage 是 moderate 还是 large？
+5. heterogeneity-associated gain 是多少？
+6. mechanism gain 是多少？
+7. household gain 是多少？
+8. LFPR / EPOP trade-offs 是否存在？
+
+Required tables:
+
+```text
+Results_By_Section/S06_02_Internal_Controls_and_Source_of_Advantage/paper_ready_tables/S06_02_T01_Internal_Control_Comparison__E6_v01.csv
+Results_By_Section/S06_02_Internal_Controls_and_Source_of_Advantage/paper_ready_tables/S06_02_T02_Source_of_Advantage__E7_v01.csv
+```
+
+Columns for T01:
+
+| Variant | Active heterogeneity | Active mechanisms | Separately calibrated? | UR RMSE pp | UR MAE pp | UR Bias pp | UR Corr | LFPR RMSE pp | EPOP RMSE pp |
+| ------- | -------------------- | ----------------- | ---------------------- | ---------: | --------: | ---------: | ------: | -----------: | -----------: |
+
+Columns for T02:
+
+| Accounting component | Definition | Gain pp | Share | Interpretation |
+| -------------------- | ---------- | ------: | ----: | -------------- |
+
+Required figure:
+
+```text
+Results_By_Section/S06_02_Internal_Controls_and_Source_of_Advantage/paper_ready_figures/S06_02_F01_Control_RMSE_Bar__E6_v01.png
+```
+
+Suggested main claim:
+
+> Separately calibrated internal controls show that worker heterogeneity provides a moderate tracking advantage, but the advantage should be interpreted as within-experiment accounting rather than causal decomposition.
+
+Do not claim:
+
+> Heterogeneity causally explains X% of unemployment dynamics.
+
+---
+
+## S06_03 Re-calibrated Heterogeneity Ablations
+
+Source experiments: E8, E9.
+
+必须回答：
+
+1. No Search Friction 的 UR RMSE 和 delta vs full 是多少？
+2. No Liquidity 的 delta 是多少？
+3. No Housing 的 delta 是多少？
+4. No SLH block 的 delta 是多少？
+5. Search friction 是否 least substitutable？
+6. Liquidity / housing 是否 weaker after re-calibration？
+7. LFPR / EPOP trade-offs 是否存在？
+8. Heterogeneity ladder 是否支持 incremental heterogeneity value？
+
+Required tables:
+
+```text
+Results_By_Section/S06_03_Recalibrated_Heterogeneity_Ablations/paper_ready_tables/S06_03_T01_Recalibrated_Ablation__E8_v01.csv
+Results_By_Section/S06_03_Recalibrated_Heterogeneity_Ablations/paper_ready_tables/S06_03_T02_Heterogeneity_Ladder__E9_v01.csv
+```
+
+Columns for T01:
+
+| Variant | Removed / flattened dimension | Re-calibrated? | UR RMSE pp | Delta vs Full pp | LFPR RMSE pp | EPOP RMSE pp | Interpretation |
+| ------- | ----------------------------- | -------------- | ---------: | ---------------: | -----------: | -----------: | -------------- |
+
+Required figures:
+
+```text
+Results_By_Section/S06_03_Recalibrated_Heterogeneity_Ablations/paper_ready_figures/S06_03_F01_Ablation_RMSE_Bar__E8_v01.png
+Results_By_Section/S06_03_Recalibrated_Heterogeneity_Ablations/paper_ready_figures/S06_03_F02_Ladder_RMSE_Path__E9_v01.png
+```
+
+Suggested main claim:
+
+> Re-calibrated ablations identify labor search friction as the least substitutable heterogeneity channel within the model.
+
+Do not claim:
+
+> Search friction is structurally identified as the true causal mechanism.
+
+---
+
+## S06_04 Forecast Benchmark Comparison
+
+Source experiment: E10.
+
+必须回答：
+
+1. ABM 在 dynamic protocol 下排名第几？
+2. ABM UR RMSE 是多少？
+3. best non-ABM benchmark 是什么？
+4. 差距是多少 pp？
+5. 相对 improvement 是多少？
+6. 这个 advantage 是否 modest？
+7. rolling one-step results 是否只作为 diagnostic？
+8. benchmark training-window difference 如何解释？
+
+Required table:
+
+```text
+Results_By_Section/S06_04_Forecast_Benchmark_Comparison/paper_ready_tables/S06_04_T01_Dynamic_Benchmark_Comparison__E10_v01.csv
+```
+
+Columns:
+
+| Rank | Model | Model family | Protocol | Training window | UR RMSE pp | UR MAE pp | UR Bias pp | UR Corr | Delta vs ABM pp | Interpretation |
+| ---- | ----- | ------------ | -------- | --------------- | ---------: | --------: | ---------: | ------: | --------------: | -------------- |
+
+Required figure:
+
+```text
+Results_By_Section/S06_04_Forecast_Benchmark_Comparison/paper_ready_figures/S06_04_F01_Benchmark_RMSE_Bar__E10_v01.png
+```
+
+Suggested main claim:
+
+> The ABM ranks first among the dynamic-protocol forecasters, but the margin over the strongest simple benchmarks is modest.
+
+Do not claim:
+
+> The ABM dominates all forecasting models.
+
+---
+
+## S06_05 Robustness and Sensitivity
+
+Source experiments: E11, E12, E13.
+
+必须回答：
+
+1. seed stability 结果如何？
+2. training-window sensitivity 是否改变主结论？
+3. forecast horizon sensitivity 是否改变主结论？
+4. agent-count sensitivity 是否说明 100,000 agents 足够？
+5. calibration-method sensitivity 是否改变主结论？
+6. 10/14 weak-ID parameters 是否确认？
+7. stable parameters 是哪些？
+8. weak-ID 对解释有什么影响？
+
+Required table:
+
+```text
+Results_By_Section/S06_05_Robustness_and_Sensitivity/paper_ready_tables/S06_05_T01_Robustness_Summary__E11_E12_E13_v01.csv
+```
+
+Columns:
+
+| Robustness dimension | Experiment | Key result | Supports main claim? | Caveat | Main text / Appendix |
+| -------------------- | ---------- | ---------- | -------------------- | ------ | -------------------- |
+
+Required figure:
+
+```text
+Results_By_Section/S06_05_Robustness_and_Sensitivity/paper_ready_figures/S06_05_F01_Robustness_Dashboard__E11_E12_E13_v01.png
+```
+
+Suggested main claim:
+
+> Robustness checks support the stability of the unemployment-tracking result, while parameter diagnostics caution against structural interpretation of individual calibrated parameters.
+
+Do not claim:
+
+> Robustness checks structurally validate the behavioral mechanisms.
+
+---
+
+# 8. Crosswalks and Registries
+
+请生成以下 registry 文件。
+
+## 8.1 Results_Experiment_to_Section_Crosswalk.csv
+
+Columns:
+
+| Paper ID | Experiment | Section ID(s) | Main text? | Appendix? | Main asset IDs |
+| -------- | ---------- | ------------- | ---------- | --------- | -------------- |
+
+## 8.2 Results_Table_Registry.csv
+
+Columns:
+
+| Table ID | File path | Section ID | Source Experiment ID(s) | Main text / Appendix | Main message | Status |
+| -------- | --------- | ---------- | ----------------------- | -------------------- | ------------ | ------ |
+
+## 8.3 Results_Figure_Registry.csv
+
+Columns:
+
+| Figure ID | File path | Section ID | Source Experiment ID(s) | Main text / Appendix | Caption | Main message | Status |
+| --------- | --------- | ---------- | ----------------------- | -------------------- | ------- | ------------ | ------ |
+
+## 8.4 Results_Asset_Registry.csv
+
+Columns:
+
+| Asset ID | Asset type | Experiment-order path | Section-order path | Source file / old name | Section ID | Paper ID | Status |
+| -------- | ---------- | --------------------- | ------------------ | ---------------------- | ---------- | -------- | ------ |
+
+---
+
+# 9. Claim-to-Evidence Table
+
+请生成：
+
+`Results_Claim_to_Evidence_Table.csv`
+
+Columns:
+
+| Claim ID | Claim | Results section | Source experiments | Evidence table | Evidence figure | Strength | Caveat | Paper-ready wording |
+| -------- | ----- | --------------- | ------------------ | -------------- | --------------- | -------- | ------ | ------------------- |
+
+必须覆盖以下 claims：
+
+1. Full model tracks recent monthly unemployment with sub-pp RMSE.
+2. Model performance varies across evaluation windows.
+3. Recent evaluation window is the headline tracking window.
+4. Full model improves over separately calibrated internal controls.
+5. Heterogeneity advantage is moderate, not overwhelming.
+6. Source-of-advantage is accounting, not causal decomposition.
+7. Search friction is the least substitutable heterogeneity channel.
+8. Liquidity and housing effects are weaker after re-calibration.
+9. Heterogeneity ladder supports incremental value of adding dimensions.
+10. ABM is competitive with external benchmarks.
+11. ABM advantage over best simple benchmarks is modest.
+12. Rolling one-step benchmarks are diagnostic, not headline comparison.
+13. Results are stable across seeds.
+14. Results are not driven by one training window.
+15. Results are not driven by agent count.
+16. Results are not driven by one calibration method.
+17. Many parameters are weakly identified.
+18. Parameter values are fitted simulation quantities, not structural estimates.
+19. Model is predictive and diagnostic, not structural.
+20. Model does not claim universal accuracy across all regimes.
+
+---
+
+# 10. Missing / Inconsistency Checklist
+
+请生成：
+
+`Results_Missing_Inconsistency_Checklist.md`
+
+Format:
+
+| Item | Location | Problem | Severity | Needed action |
+| ---- | -------- | ------- | -------- | ------------- |
+
+Severity:
+
+* BLOCKS RESULTS WRITING
+* NEEDS CHECK BEFORE FINAL DRAFT
+* APPENDIX ONLY
+* OPTIONAL IMPROVEMENT
+
+必须检查：
+
+1. 是否所有 E1–E13 都有结果文件；
+2. 是否 E4/E5 的 windows 和 Section 4 一致；
+3. 是否 2022-01 to 2026-02 的 RMSE 数字一致；
+4. 是否 0.221 和 0.273 的使用场景清楚；
+5. 是否 controls 全部 separately calibrated；
+6. 是否 ablations 全部 re-calibrated；
+7. benchmark list 是否和实际代码输出一致；
+8. dynamic vs rolling protocol 是否区分；
+9. 是否存在旧实验数字混入 main results；
+10. 是否所有 figures/tables 有新命名；
+11. 是否所有 units 是 pp / decimal；
+12. 是否 weak-ID 参数名单和 P1 report 一致；
+13. 是否 source-of-advantage 没有被写成 causal decomposition；
+14. 是否没有出现 “R / revised / audit / P1 report” 这类内部工作流语言；
+15. 是否 Results wording 没有过度强调 COVID；
+16. 是否 citations / references 需要最后补。
+
+---
+
+# 11. Output Style
+
+最终输出报告必须分为两层：
+
+## Layer 1: Audit Layer
+
+* 按 E1–E13 检查所有结果；
+* 给出完整表格和文件来源；
+* 标注缺失、冲突和 appendix-only 内容；
+* 输出到 `Results_By_Experiment/`。
+
+## Layer 2: Manuscript Layer
+
+* 按 S06_01–S06_05 组织；
+* 给出 paper-ready 表格、图、claim、caveat、wording；
+* 输出到 `Results_By_Section/`；
+* 用于之后写正式 Results 正文。
+
+不要把 Layer 1 直接写成论文正文。
+
+---
+
+# 12. Final Summary
+
+报告最后请输出：
+
+## Ready for Section 6 Writing?
+
+使用：
+
+* YES
+* YES WITH CAVEATS
+* NO
+
+并列出：
+
+1. 已经 ready 的 Results sections；
+2. 仍需补充的数据或图；
+3. 不能写进正文的 claim；
+4. 最终 Section 6 推荐写作顺序；
+5. 每个 Results subsection 推荐使用的 table / figure；
+6. 两套输出目录是否完整：
+
+   * `Results_By_Experiment/`
+   * `Results_By_Section/`
+
+请开始生成完整 Results Master Package。

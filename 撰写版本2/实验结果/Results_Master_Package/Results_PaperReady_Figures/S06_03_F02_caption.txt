@@ -1,0 +1,8 @@
+Caption text for S06_03_F02 — heterogeneity ladder composition (paste into manuscript caption):
+  L0: (no heterogeneity)
+  L1: labor_frag
+  L2: labor_frag + search
+  L3: income_exp + labor_frag + search
+  L4: income_exp + labor_frag + liquidity + search
+  L5: housing + income_exp + labor_frag + liquidity + search
+  L6: consumption_rule + housing + income_exp + labor_frag + liquidity + search

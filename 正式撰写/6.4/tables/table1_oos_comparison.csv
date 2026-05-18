@@ -1,0 +1,6 @@
+model,model_type,OOS_UR_RMSE_pp,OOS_UR_RMSE_seed_sd_pp,OOS_UR_MAE_pp,OOS_UR_corr,OOS_UR_bias_pp,OOS_UR_max_abs_err_pp,RMSE_ratio_vs_full,improvement_vs_full_pp,interpretation
+Full heterogeneous ABM,Heterogeneous ABM (5 seeds),0.2211,0.0068,0.1629,0.7896,-0.0425,0.6641,1.0,0.0,reference (lowest OOS UR RMSE among all models)
+Beveridge benchmark,Reduced-form OLS,0.4216,—,0.3871,0.8262,0.3176,0.6972,1.907,0.2005,strongest external benchmark; tracks co-movement (Corr +0.83) but level RMSE 1.9x worse than full ABM
+DMP-style benchmark,Structural search-matching,0.6361,—,0.5473,0.8185,-0.5473,1.4368,2.877,0.415,captures matching structure; underpredicts post-COVID UR (bias -0.55 pp)
+VAR(2) benchmark,Multivariate AR,0.6633,—,0.5441,-0.8698,0.5169,1.1205,3.0,0.4423,negative OOS Corr: multivariate AR extrapolates wrong direction after COVID training-window structural break
+AR(1) benchmark,Univariate AR,1.6106,—,1.5572,0.6372,1.5572,1.9753,7.285,1.3895,univariate baseline; reverts toward training mean while observed UR rose (bias +1.56 pp)

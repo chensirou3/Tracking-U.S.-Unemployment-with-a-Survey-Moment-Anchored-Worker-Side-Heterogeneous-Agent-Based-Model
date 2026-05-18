@@ -1,0 +1,20 @@
+rank,ablation,kind,delta_ur_rmse_pp,seed_sd_ur_pp,stable_across_seeds,interpretation
+1,mechanism: matching_competition,mechanism,1.9251,0.0153,stable,CORE — disabling collapses UR dynamics
+2,dimension: Labor Search Friction,dimension,0.8891,0.0197,stable,critical — flattening sharply degrades UR; dominant standalone driver
+3,dimension: Liquidity Fragility,dimension,0.2992,0.0308,stable,important — clear standalone contribution to UR fit
+4,mechanism: housing_reentry_friction,mechanism,0.1751,0.0331,stable,important — disabling produces visible UR loss
+5,dimension: Housing Mobility Friction,dimension,0.1618,0.0318,stable,important — clear standalone contribution to UR fit
+6,mechanism: liquidity_constraint_modifier,mechanism,0.074,0.0259,fragile,marginal UR effect; may matter for LFPR/EPOP
+7,dimension: Consumption Adjustment Rule,dimension,0.0474,0.011,stable,marginal — small standalone effect; check ladder for interaction
+8,mechanism: state_dependent_expectation,mechanism,0.0314,0.0229,fragile,marginal UR effect; may matter for LFPR/EPOP
+9,mechanism: expectation_participation,mechanism,0.0282,0.009,stable,mild deterioration
+10,mechanism: effective_mpc_adjustment,mechanism,0.0277,0.0113,fragile,standalone effect within seed noise
+11,mechanism: discouraged_worker,mechanism,0.0232,0.0156,fragile,standalone effect within seed noise
+12,dimension: Labor Fragility,dimension,0.0229,0.0164,fragile,negligible — within seed noise standalone
+13,dimension: Income Growth Expectation,dimension,0.0197,0.0154,fragile,negligible — within seed noise standalone
+14,mechanism: housing_lockin_modifier,mechanism,0.0194,0.0082,fragile,standalone effect within seed noise
+15,mechanism: high_fragility_modifier,mechanism,0.0118,0.0151,fragile,standalone effect within seed noise
+16,mechanism: fragility_x_liquidity_interaction,mechanism,0.0114,0.0154,fragile,standalone effect within seed noise
+17,mechanism: experience_dependent_expectation,mechanism,0.0113,0.0112,fragile,standalone effect within seed noise
+18,mechanism: consumption_sequencing,mechanism,0.0107,0.0098,fragile,standalone effect within seed noise
+19,mechanism: buffer_consumption_ordering,mechanism,0.0056,0.0253,n/a,standalone effect within seed noise

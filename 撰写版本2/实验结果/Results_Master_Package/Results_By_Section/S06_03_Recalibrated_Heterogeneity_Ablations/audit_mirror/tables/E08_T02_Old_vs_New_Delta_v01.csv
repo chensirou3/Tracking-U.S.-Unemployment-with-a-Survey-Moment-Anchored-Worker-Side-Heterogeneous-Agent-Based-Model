@@ -1,0 +1,7 @@
+variant,label,old_raw_delta_pp,new_recalibrated_delta_pp,delta_reduction_pp,interpretation
+V_NoSearch,No Search Friction ABM,0.889,0.8123,0.077,gap survives recalibration
+V_NoLiquidity,No Liquidity Fragility ABM,0.299,0.1046,0.194,recalibration largely closes the gap
+V_NoHousing,No Housing Mobility ABM,0.162,-0.0362,0.198,recalibration largely closes the gap
+V_NoSLH,No Search-Liquidity-Housing ABM,,0.4294,N/A (new variant),no legacy counterpart
+V_NoConsumption,No Consumption Rule ABM,0.04,-0.0249,0.065,sign flip after recalibration
+V_SearchOnly,Search-only heterogeneity ABM,,0.0367,N/A (new variant),no legacy counterpart

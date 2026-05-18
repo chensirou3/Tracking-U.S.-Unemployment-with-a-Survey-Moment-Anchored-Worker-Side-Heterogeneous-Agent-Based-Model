@@ -1,0 +1,14 @@
+Paper ID,Experiment,Section ID(s),Main text?,Appendix?,Main asset IDs
+E1,Synthetic Population Construction,—,No,Yes (Appendix A),E01_T01;E01_T02
+E2,Baseline Stability Check,—,No,Yes (Appendix A),E02_T01
+E3,Calibration Setup,S06_02 (cross-ref);S06_03 (cross-ref),No,Yes (Appendix B),E03_T01;E03_T02
+E4,Dynamic Evaluation,S06_01,Yes,—,S06_01_T01;S06_01_F01
+E5,Regime-Specific Evaluation,S06_01,Yes,—,S06_01_T01;S06_01_F02
+E6,Internal Control Comparison,S06_02,Yes,—,S06_02_T01;S06_02_F01
+E7,Source-of-Advantage Decomposition,S06_02,Yes,—,S06_02_T02
+E8,Heterogeneity Ablation,S06_03,Yes,—,S06_03_T01;S06_03_F01
+E9,Heterogeneity Ladder,S06_03,Yes,—,S06_03_T02;S06_03_F02
+E10,Forecast Benchmark Comparison,S06_04,Yes,—,S06_04_T01;S06_04_F01
+E11,Training-Window Sensitivity,S06_05,Yes,—,S06_05_T01;S06_05_F01 (panel a)
+E12,Forecast-Horizon and Agent-Count Sensitivity,S06_05,Yes,—,S06_05_T01;S06_05_F01 (panels b/c)
+E13,Calibration-Method and Parameter-Identification Sensitivity,S06_05,Yes,—,S06_05_T01;S06_05_F01 (panel d)

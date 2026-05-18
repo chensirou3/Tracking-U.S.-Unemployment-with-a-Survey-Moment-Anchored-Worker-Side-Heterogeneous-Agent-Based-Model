@@ -1,0 +1,9 @@
+Robustness dimension,Experiment,Key result,Supports main claim?,Caveat,Main text / Appendix
+Multi-seed dispersion,E4,5-seed UR RMSE 0.273 ± 0.023 pp (CV = 8.5%) for recalibrated V_Full on main recent evaluation window,Yes,Seed s.d. is the same order as the lead over no-change (0.036 pp),Main text
+Training-window sensitivity,E11,Full ABM OOS RMSE 0.245 ± 0.011 pp across 7 OOS-aligned splits; rank 1 in 6/7,Yes,Computed on legacy baseline class (pre-recalibration); ranking-level only,Appendix
+Forecast-horizon degradation,E12,Log-log RMSE slope = -0.092 for Full ABM (shallowest of 8 models); no horizon explosion up to h=36,Yes,Legacy benchmarks used (AR/VAR/Beveridge/DMP); stronger benchmarks not re-run,Appendix
+Agent-count plateau,E12,|ΔRMSE|<0.015 pp at N≥50k; default N=100k beyond plateau,Yes,Property of the Full ABM class; carries to recalibrated runs,Appendix
+Calibration-method sensitivity,E13,best-test UR RMSE 0.214-0.243 pp across 5 methods (CV 5.55%),Yes,Band centred on legacy baseline 0.22 pp; recalibrated V_Full headline = 0.273 pp,Main text
+Parameter identification,E13,10/14 parameters CV ≥ 0.40 across top-5 calibration candidates,Yes (forecast-stable),Individual structural parameters are not pinned down; report as bands,Main text
+,,,,,
+Footnote,,,Robustness supports the tracking claim conditional on weak identification of 10 of 14 parameters (CV ≥ 0.40 threshold) and on two rolling-window splits performing worse; this is not universal robustness.,,

@@ -1,0 +1,28 @@
+==============================================================================
+Section 6.4 — External Benchmark Comparison rerun
+==============================================================================
+T = 302 months; windows init=[0,36) train=[36,204) val=[204,252) oos=[252,302)
+Macro driver source: RealEnvironment(JTSJOR/JTSLDR/CES/FEDFUNDS)
+  market_tightness range = [0.567, 2.500]  separation_rate range = [0.0090, 0.0500]
+OOS UR NaN months = 1 / 50
+
+[B1] AR(p) on UR, BIC ∈ {1,2,3,6,12}
+  BIC selected p=1  OOS UR RMSE = 1.6106 pp  MAE=1.5572  Corr=0.6372  bias=+1.5572 pp  n_valid=49
+
+[B2] VAR(p) on (UR, LFPR, EPOP), BIC up to maxlag=6
+  BIC selected p=2  OOS UR RMSE = 0.6633 pp  Corr=-0.8698  bias=+0.5169 pp
+  LFPR RMSE = 0.8248 pp   EPOP RMSE = 1.0894 pp
+
+[B3] Beveridge OLS:  UR_t = a + b1*(1/v_t) + b2*sep_t
+  params (intercept, b_invV, b_sep) = (0.01177, 0.04181, 0.57623)
+  R^2(fit) = 0.3848    OOS UR RMSE = 0.4216 pp  Corr=+0.8262  bias=+0.3176 pp
+
+[B4] Simplified DMP: u_{t+1} = u_t + s_t(1-u_t) - f_t u_t,  f = A theta^(1-alpha)
+  A=0.2137   alpha=0.4106
+  OOS UR RMSE = 0.6361 pp  Corr=+0.8185  bias=-0.5473 pp
+
+Saved benchmark_metrics.json and benchmark_series.npz
+
+==============================================================================
+Section 6.4 benchmark rerun done in 1.0 s
+==============================================================================

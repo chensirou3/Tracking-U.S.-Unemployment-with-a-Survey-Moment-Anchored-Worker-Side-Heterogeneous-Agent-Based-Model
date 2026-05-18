@@ -1,0 +1,71 @@
+{
+  "static_traits": {
+    "columns": {
+      "age": 0,
+      "education": 1,
+      "marital_status": 2,
+      "household_size": 3
+    },
+    "dtype": "int16",
+    "K": 4
+  },
+  "category_states": {
+    "columns": {
+      "employment_state": 0,
+      "liquidity_type": 1,
+      "housing_status": 2,
+      "consumption_type": 3
+    },
+    "dtype": "int8",
+    "K": 4,
+    "encodings": {
+      "employment": {
+        "E": 0,
+        "U": 1,
+        "N": 2
+      },
+      "liquidity": {
+        "H2M": 0,
+        "Buffer": 1,
+        "Wealthy": 2
+      },
+      "housing": {
+        "Renter-Mobile": 0,
+        "Renter-Stable": 1,
+        "Owner-Low-LTV": 2,
+        "Owner-High-LTV": 3
+      },
+      "consumption": {
+        "Saver": 0,
+        "Smoother": 1,
+        "Spender": 2
+      }
+    }
+  },
+  "dynamic_states": {
+    "columns": {
+      "income_expectation": 0,
+      "income_uncertainty": 1,
+      "labor_fragility": 2,
+      "cash_buffer_months": 3,
+      "search_intensity": 4,
+      "mobility_friction_score": 5,
+      "household_income": 6,
+      "unemployment_duration": 7,
+      "debt_stress": 8
+    },
+    "dtype": "float64",
+    "K": 9
+  },
+  "behavior_params": {
+    "columns": {
+      "mpc_positive": 0,
+      "mpc_negative": 1,
+      "asymmetry_ratio": 2,
+      "reservation_wage_ratio": 3,
+      "flexibility_index": 4
+    },
+    "dtype": "float64",
+    "K": 5
+  }
+}

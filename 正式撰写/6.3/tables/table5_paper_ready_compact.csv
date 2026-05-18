@@ -1,0 +1,8 @@
+ablation,oos_ur_rmse_pp,delta_ur_rmse_pp,main_interpretation
+Full heterogeneous ABM,0.221,—,reference; LFPR/EPOP overshoot remains (see Section 6.2)
+Flatten Labor Search Friction,1.110,+0.889,critical — flattening sharply degrades UR; dominant standalone driver
+Flatten Liquidity Fragility,0.520,+0.299,important — clear standalone contribution to UR fit
+Flatten Housing Mobility Friction,0.383,+0.162,important — clear standalone contribution to UR fit
+Flatten Consumption Adjustment Rule,0.268,+0.047,marginal — small standalone effect; check ladder for interaction
+Flatten Labor Fragility,0.244,+0.023,negligible — within seed noise standalone
+Flatten Income Growth Expectation,0.241,+0.020,negligible — within seed noise standalone

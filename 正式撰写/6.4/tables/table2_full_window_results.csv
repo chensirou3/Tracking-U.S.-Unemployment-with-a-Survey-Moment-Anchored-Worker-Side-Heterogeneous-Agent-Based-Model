@@ -1,0 +1,6 @@
+model,window,UR_RMSE_pp,UR_MAE_pp,UR_corr,UR_bias_pp,LFPR_RMSE_pp,LFPR_bias_pp,EPOP_RMSE_pp,EPOP_bias_pp,notes
+Full heterogeneous ABM,OOS 2022-01..2026-02 (49 valid months),0.2211,0.1629,0.7896,-0.0425,2.2743,2.2537,2.2141,2.1941,5-seed mean; LFPR/EPOP from Section 6.2 derived series
+Beveridge benchmark,OOS 2022-01..2026-02 (49 valid months),0.4216,0.3871,0.8262,0.3176,—,—,—,—,UR-only benchmark (LFPR/EPOP not applicable)
+DMP-style benchmark,OOS 2022-01..2026-02 (49 valid months),0.6361,0.5473,0.8185,-0.5473,—,—,—,—,UR-only benchmark (LFPR/EPOP not applicable)
+VAR(2) benchmark,OOS 2022-01..2026-02 (49 valid months),0.6633,0.5441,-0.8698,0.5169,0.8248,-0.7936,1.0894,-1.0521,VAR jointly forecasts UR/LFPR/EPOP
+AR(1) benchmark,OOS 2022-01..2026-02 (49 valid months),1.6106,1.5572,0.6372,1.5572,—,—,—,—,UR-only benchmark (LFPR/EPOP not applicable)

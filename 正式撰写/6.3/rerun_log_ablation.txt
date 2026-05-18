@@ -1,0 +1,150 @@
+==============================================================================
+PHASE 7 ABLATION RERUN (6.3) — dim flattenings + mechanism on/off
+  configurations: 20  seeds: [42, 137, 2024, 888, 1234]
+  windows: ['train', 'val', 'oos']  period: 2001-01..2026-02 (302 months)
+  parameters from candidate_baseline.json
+==============================================================================
+
+[baseline]  kind=none  target=none
+  seed=42: OOS UR_RMSE=0.232 pp  Corr=0.780  LFPR=2.113 pp  EPOP=2.055 pp  (10.6s)
+  seed=137: OOS UR_RMSE=0.220 pp  Corr=0.758  LFPR=2.115 pp  EPOP=2.076 pp  (10.9s)
+  seed=2024: OOS UR_RMSE=0.211 pp  Corr=0.825  LFPR=2.323 pp  EPOP=2.263 pp  (9.8s)
+  seed=888: OOS UR_RMSE=0.222 pp  Corr=0.800  LFPR=2.304 pp  EPOP=2.244 pp  (9.7s)
+  seed=1234: OOS UR_RMSE=0.220 pp  Corr=0.785  LFPR=2.517 pp  EPOP=2.433 pp  (9.7s)
+
+[dim_income_exp]  kind=dim  target=income_exp
+  seed=42: OOS UR_RMSE=0.252 pp  Corr=0.742  LFPR=2.221 pp  EPOP=2.144 pp  (9.6s)
+  seed=137: OOS UR_RMSE=0.254 pp  Corr=0.786  LFPR=2.164 pp  EPOP=2.101 pp  (9.6s)
+  seed=2024: OOS UR_RMSE=0.219 pp  Corr=0.831  LFPR=2.210 pp  EPOP=2.200 pp  (9.7s)
+  seed=888: OOS UR_RMSE=0.225 pp  Corr=0.764  LFPR=2.151 pp  EPOP=2.095 pp  (9.7s)
+  seed=1234: OOS UR_RMSE=0.253 pp  Corr=0.747  LFPR=2.375 pp  EPOP=2.301 pp  (9.7s)
+
+[dim_labor_frag]  kind=dim  target=labor_frag
+  seed=42: OOS UR_RMSE=0.221 pp  Corr=0.777  LFPR=2.200 pp  EPOP=2.133 pp  (10.5s)
+  seed=137: OOS UR_RMSE=0.258 pp  Corr=0.696  LFPR=2.286 pp  EPOP=2.223 pp  (10.4s)
+  seed=2024: OOS UR_RMSE=0.231 pp  Corr=0.758  LFPR=2.455 pp  EPOP=2.384 pp  (10.1s)
+  seed=888: OOS UR_RMSE=0.265 pp  Corr=0.704  LFPR=2.226 pp  EPOP=2.173 pp  (10.0s)
+  seed=1234: OOS UR_RMSE=0.244 pp  Corr=0.833  LFPR=2.371 pp  EPOP=2.313 pp  (10.4s)
+
+[dim_liquidity]  kind=dim  target=liquidity
+  seed=42: OOS UR_RMSE=0.481 pp  Corr=0.776  LFPR=0.390 pp  EPOP=0.303 pp  (9.8s)
+  seed=137: OOS UR_RMSE=0.564 pp  Corr=0.778  LFPR=0.613 pp  EPOP=0.365 pp  (9.8s)
+  seed=2024: OOS UR_RMSE=0.500 pp  Corr=0.829  LFPR=0.378 pp  EPOP=0.301 pp  (9.9s)
+  seed=888: OOS UR_RMSE=0.510 pp  Corr=0.796  LFPR=0.404 pp  EPOP=0.330 pp  (9.6s)
+  seed=1234: OOS UR_RMSE=0.546 pp  Corr=0.810  LFPR=0.558 pp  EPOP=0.318 pp  (9.3s)
+
+[dim_search]  kind=dim  target=search
+  seed=42: OOS UR_RMSE=1.074 pp  Corr=0.800  LFPR=3.681 pp  EPOP=4.218 pp  (9.8s)
+  seed=137: OOS UR_RMSE=1.115 pp  Corr=0.780  LFPR=3.872 pp  EPOP=4.433 pp  (9.7s)
+  seed=2024: OOS UR_RMSE=1.113 pp  Corr=0.755  LFPR=3.838 pp  EPOP=4.394 pp  (9.7s)
+  seed=888: OOS UR_RMSE=1.135 pp  Corr=0.798  LFPR=3.768 pp  EPOP=4.342 pp  (9.8s)
+  seed=1234: OOS UR_RMSE=1.113 pp  Corr=0.787  LFPR=3.777 pp  EPOP=4.343 pp  (9.8s)
+
+[dim_housing]  kind=dim  target=housing
+  seed=42: OOS UR_RMSE=0.417 pp  Corr=0.737  LFPR=9.129 pp  EPOP=8.529 pp  (9.9s)
+  seed=137: OOS UR_RMSE=0.391 pp  Corr=0.766  LFPR=8.917 pp  EPOP=8.359 pp  (9.9s)
+  seed=2024: OOS UR_RMSE=0.410 pp  Corr=0.774  LFPR=8.775 pp  EPOP=8.198 pp  (10.4s)
+  seed=888: OOS UR_RMSE=0.330 pp  Corr=0.824  LFPR=9.033 pp  EPOP=8.509 pp  (10.3s)
+  seed=1234: OOS UR_RMSE=0.367 pp  Corr=0.781  LFPR=8.883 pp  EPOP=8.331 pp  (9.9s)
+
+[dim_consumption_rule]  kind=dim  target=consumption_rule
+  seed=42: OOS UR_RMSE=0.275 pp  Corr=0.768  LFPR=1.744 pp  EPOP=1.598 pp  (9.2s)
+  seed=137: OOS UR_RMSE=0.261 pp  Corr=0.780  LFPR=1.892 pp  EPOP=1.753 pp  (9.5s)
+  seed=2024: OOS UR_RMSE=0.257 pp  Corr=0.770  LFPR=1.991 pp  EPOP=1.858 pp  (9.5s)
+  seed=888: OOS UR_RMSE=0.287 pp  Corr=0.768  LFPR=1.918 pp  EPOP=1.771 pp  (10.6s)
+  seed=1234: OOS UR_RMSE=0.262 pp  Corr=0.769  LFPR=2.121 pp  EPOP=1.963 pp  (10.3s)
+
+[mech_high_fragility_modifier]  kind=mech  target=high_fragility_modifier
+  seed=42: OOS UR_RMSE=0.220 pp  Corr=0.813  LFPR=2.126 pp  EPOP=2.070 pp  (11.1s)
+  seed=137: OOS UR_RMSE=0.257 pp  Corr=0.726  LFPR=2.099 pp  EPOP=2.037 pp  (12.4s)
+  seed=2024: OOS UR_RMSE=0.214 pp  Corr=0.817  LFPR=2.203 pp  EPOP=2.142 pp  (10.5s)
+  seed=888: OOS UR_RMSE=0.235 pp  Corr=0.775  LFPR=2.500 pp  EPOP=2.434 pp  (10.4s)
+  seed=1234: OOS UR_RMSE=0.239 pp  Corr=0.782  LFPR=2.457 pp  EPOP=2.390 pp  (10.4s)
+
+[mech_liquidity_constraint_modifier]  kind=mech  target=liquidity_constraint_modifier
+  seed=42: OOS UR_RMSE=0.300 pp  Corr=0.795  LFPR=1.611 pp  EPOP=1.417 pp  (10.4s)
+  seed=137: OOS UR_RMSE=0.262 pp  Corr=0.794  LFPR=1.653 pp  EPOP=1.486 pp  (10.4s)
+  seed=2024: OOS UR_RMSE=0.268 pp  Corr=0.766  LFPR=1.745 pp  EPOP=1.583 pp  (10.4s)
+  seed=888: OOS UR_RMSE=0.325 pp  Corr=0.822  LFPR=1.697 pp  EPOP=1.472 pp  (10.5s)
+  seed=1234: OOS UR_RMSE=0.320 pp  Corr=0.788  LFPR=1.531 pp  EPOP=1.326 pp  (10.3s)
+
+[mech_housing_lockin_modifier]  kind=mech  target=housing_lockin_modifier
+  seed=42: OOS UR_RMSE=0.227 pp  Corr=0.791  LFPR=2.546 pp  EPOP=2.471 pp  (10.1s)
+  seed=137: OOS UR_RMSE=0.250 pp  Corr=0.768  LFPR=2.590 pp  EPOP=2.547 pp  (10.3s)
+  seed=2024: OOS UR_RMSE=0.239 pp  Corr=0.844  LFPR=2.467 pp  EPOP=2.413 pp  (10.2s)
+  seed=888: OOS UR_RMSE=0.238 pp  Corr=0.742  LFPR=2.382 pp  EPOP=2.317 pp  (11.3s)
+  seed=1234: OOS UR_RMSE=0.249 pp  Corr=0.726  LFPR=2.508 pp  EPOP=2.413 pp  (9.4s)
+
+[mech_fragility_x_liquidity_interaction]  kind=mech  target=fragility_x_liquidity_interaction
+  seed=42: OOS UR_RMSE=0.233 pp  Corr=0.799  LFPR=2.430 pp  EPOP=2.333 pp  (9.4s)
+  seed=137: OOS UR_RMSE=0.217 pp  Corr=0.832  LFPR=2.290 pp  EPOP=2.249 pp  (9.9s)
+  seed=2024: OOS UR_RMSE=0.246 pp  Corr=0.771  LFPR=2.327 pp  EPOP=2.281 pp  (11.7s)
+  seed=888: OOS UR_RMSE=0.253 pp  Corr=0.760  LFPR=2.334 pp  EPOP=2.259 pp  (11.8s)
+  seed=1234: OOS UR_RMSE=0.214 pp  Corr=0.850  LFPR=2.228 pp  EPOP=2.186 pp  (11.9s)
+
+[mech_matching_competition]  kind=mech  target=matching_competition
+  seed=42: OOS UR_RMSE=2.152 pp  Corr=0.793  LFPR=0.782 pp  EPOP=2.030 pp  (12.3s)
+  seed=137: OOS UR_RMSE=2.141 pp  Corr=0.797  LFPR=0.743 pp  EPOP=1.985 pp  (10.2s)
+  seed=2024: OOS UR_RMSE=2.168 pp  Corr=0.796  LFPR=0.740 pp  EPOP=1.994 pp  (9.9s)
+  seed=888: OOS UR_RMSE=2.149 pp  Corr=0.711  LFPR=0.741 pp  EPOP=1.992 pp  (9.8s)
+  seed=1234: OOS UR_RMSE=2.121 pp  Corr=0.782  LFPR=0.832 pp  EPOP=2.061 pp  (11.6s)
+
+[mech_discouraged_worker]  kind=mech  target=discouraged_worker
+  seed=42: OOS UR_RMSE=0.248 pp  Corr=0.770  LFPR=3.906 pp  EPOP=3.748 pp  (11.9s)
+  seed=137: OOS UR_RMSE=0.253 pp  Corr=0.756  LFPR=3.887 pp  EPOP=3.712 pp  (12.0s)
+  seed=2024: OOS UR_RMSE=0.264 pp  Corr=0.714  LFPR=3.718 pp  EPOP=3.575 pp  (12.4s)
+  seed=888: OOS UR_RMSE=0.238 pp  Corr=0.791  LFPR=3.733 pp  EPOP=3.581 pp  (12.3s)
+  seed=1234: OOS UR_RMSE=0.218 pp  Corr=0.789  LFPR=3.894 pp  EPOP=3.761 pp  (11.5s)
+
+[mech_housing_reentry_friction]  kind=mech  target=housing_reentry_friction
+  seed=42: OOS UR_RMSE=0.366 pp  Corr=0.784  LFPR=8.244 pp  EPOP=7.712 pp  (11.3s)
+  seed=137: OOS UR_RMSE=0.449 pp  Corr=0.728  LFPR=8.434 pp  EPOP=7.846 pp  (11.4s)
+  seed=2024: OOS UR_RMSE=0.356 pp  Corr=0.794  LFPR=8.454 pp  EPOP=7.931 pp  (11.4s)
+  seed=888: OOS UR_RMSE=0.411 pp  Corr=0.804  LFPR=8.360 pp  EPOP=7.792 pp  (11.6s)
+  seed=1234: OOS UR_RMSE=0.400 pp  Corr=0.766  LFPR=8.318 pp  EPOP=7.778 pp  (11.6s)
+
+[mech_expectation_participation]  kind=mech  target=expectation_participation
+  seed=42: OOS UR_RMSE=0.247 pp  Corr=0.788  LFPR=2.470 pp  EPOP=2.452 pp  (11.6s)
+  seed=137: OOS UR_RMSE=0.243 pp  Corr=0.814  LFPR=2.546 pp  EPOP=2.540 pp  (11.6s)
+  seed=2024: OOS UR_RMSE=0.260 pp  Corr=0.789  LFPR=2.715 pp  EPOP=2.665 pp  (11.4s)
+  seed=888: OOS UR_RMSE=0.237 pp  Corr=0.783  LFPR=2.448 pp  EPOP=2.396 pp  (11.3s)
+  seed=1234: OOS UR_RMSE=0.260 pp  Corr=0.799  LFPR=2.637 pp  EPOP=2.621 pp  (11.3s)
+
+[mech_effective_mpc_adjustment]  kind=mech  target=effective_mpc_adjustment
+  seed=42: OOS UR_RMSE=0.258 pp  Corr=0.759  LFPR=1.980 pp  EPOP=1.881 pp  (10.6s)
+  seed=137: OOS UR_RMSE=0.236 pp  Corr=0.771  LFPR=1.998 pp  EPOP=1.909 pp  (10.9s)
+  seed=2024: OOS UR_RMSE=0.242 pp  Corr=0.765  LFPR=1.858 pp  EPOP=1.769 pp  (10.8s)
+  seed=888: OOS UR_RMSE=0.266 pp  Corr=0.681  LFPR=2.033 pp  EPOP=1.930 pp  (10.9s)
+  seed=1234: OOS UR_RMSE=0.242 pp  Corr=0.748  LFPR=2.192 pp  EPOP=2.072 pp  (10.8s)
+
+[mech_consumption_sequencing]  kind=mech  target=consumption_sequencing
+  seed=42: OOS UR_RMSE=0.222 pp  Corr=0.767  LFPR=2.195 pp  EPOP=2.115 pp  (11.1s)
+  seed=137: OOS UR_RMSE=0.229 pp  Corr=0.739  LFPR=2.101 pp  EPOP=2.049 pp  (11.2s)
+  seed=2024: OOS UR_RMSE=0.238 pp  Corr=0.785  LFPR=2.298 pp  EPOP=2.264 pp  (11.2s)
+  seed=888: OOS UR_RMSE=0.223 pp  Corr=0.779  LFPR=2.177 pp  EPOP=2.123 pp  (11.5s)
+  seed=1234: OOS UR_RMSE=0.247 pp  Corr=0.744  LFPR=2.405 pp  EPOP=2.302 pp  (11.1s)
+
+[mech_buffer_consumption_ordering]  kind=mech  target=buffer_consumption_ordering
+  seed=42: OOS UR_RMSE=0.262 pp  Corr=0.747  LFPR=2.099 pp  EPOP=2.032 pp  (10.9s)
+  seed=137: OOS UR_RMSE=0.216 pp  Corr=0.773  LFPR=2.136 pp  EPOP=2.034 pp  (11.4s)
+  seed=2024: OOS UR_RMSE=0.244 pp  Corr=0.756  LFPR=2.010 pp  EPOP=1.919 pp  (12.1s)
+  seed=888: OOS UR_RMSE=0.223 pp  Corr=0.775  LFPR=2.050 pp  EPOP=1.986 pp  (12.2s)
+  seed=1234: OOS UR_RMSE=0.188 pp  Corr=0.847  LFPR=2.149 pp  EPOP=2.076 pp  (12.0s)
+
+[mech_state_dependent_expectation]  kind=mech  target=state_dependent_expectation
+  seed=42: OOS UR_RMSE=0.265 pp  Corr=0.775  LFPR=1.404 pp  EPOP=1.440 pp  (11.4s)
+  seed=137: OOS UR_RMSE=0.268 pp  Corr=0.776  LFPR=1.640 pp  EPOP=1.677 pp  (10.8s)
+  seed=2024: OOS UR_RMSE=0.253 pp  Corr=0.807  LFPR=1.466 pp  EPOP=1.508 pp  (9.7s)
+  seed=888: OOS UR_RMSE=0.208 pp  Corr=0.826  LFPR=1.540 pp  EPOP=1.523 pp  (9.2s)
+  seed=1234: OOS UR_RMSE=0.269 pp  Corr=0.747  LFPR=1.759 pp  EPOP=1.765 pp  (9.8s)
+
+[mech_experience_dependent_expectation]  kind=mech  target=experience_dependent_expectation
+  seed=42: OOS UR_RMSE=0.223 pp  Corr=0.786  LFPR=4.197 pp  EPOP=4.059 pp  (11.1s)
+  seed=137: OOS UR_RMSE=0.242 pp  Corr=0.804  LFPR=4.072 pp  EPOP=3.952 pp  (11.7s)
+  seed=2024: OOS UR_RMSE=0.216 pp  Corr=0.785  LFPR=4.059 pp  EPOP=3.958 pp  (11.9s)
+  seed=888: OOS UR_RMSE=0.245 pp  Corr=0.765  LFPR=4.080 pp  EPOP=3.937 pp  (11.7s)
+  seed=1234: OOS UR_RMSE=0.235 pp  Corr=0.756  LFPR=4.373 pp  EPOP=4.245 pp  (12.1s)
+
+Total wall time: 1066.9s
+Saved: 正式撰写/6.3/ablation_metrics.json
+Saved: 正式撰写/6.3/ablation_series.npz

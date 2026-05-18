@@ -1,0 +1,21 @@
+param,cv_across_top5,unstable_flag,status
+acceptance_pressure,0.5504,true,WEAK
+duration_thresh,0.4486,true,WEAK
+emp_adapt_speed,0.6426,true,WEAK
+exit_jump,0.5896,true,WEAK
+fragility_threshold,0.2222,false,STABLE
+h2m_mpc_floor,0.0640,false,STABLE
+h2m_resv_discount,0.4230,true,WEAK
+lockin_penalty,0.5899,true,WEAK
+optimism_entry,0.4891,true,WEAK
+pessimism_exit,0.4325,true,WEAK
+reentry_penalty,0.4966,true,WEAK
+unemp_adapt_speed,0.4357,true,WEAK
+vacancy_rate,0.3339,false,STABLE
+wealthy_discount,0.3636,false,STABLE
+,,,
+[performance_lens],,,
+cv_best_train_loss (across top-5),0.0263,,
+cv_best_test_ur_rmse (across top-5),0.0555,,
+best_test_min_pp,0.2143,,
+best_test_max_pp,0.2433,,

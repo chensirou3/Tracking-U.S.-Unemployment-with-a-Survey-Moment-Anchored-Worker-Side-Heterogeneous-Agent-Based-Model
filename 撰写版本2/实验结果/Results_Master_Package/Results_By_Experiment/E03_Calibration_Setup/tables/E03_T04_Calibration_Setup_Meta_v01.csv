@@ -1,0 +1,8 @@
+attribute,value
+Training window,"2004-01..2017-12 (168 months; indices [36, 204))"
+Warm-up / initialisation period,2001-01..2003-12 (36 months; excluded from loss)
+Evaluation seeds,"{42, 137, 2024, 888, 1234}"
+Calibration seeds,"{42, 137, 2024}"
+Calibrated parameters (V_Full),14
+Calibration method (headline),"Latin Hypercube Sampling, 100/100/100/30 budget"
+Weakly identified parameters (CV ≥ 0.40),10 / 14 (see E13 for full list)

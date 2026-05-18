@@ -1,0 +1,13 @@
+Model,Protocol,Inputs,PostCOVID_RMSE_pp,PostCOVID_MAE_pp,PostCOVID_Corr,Full2018_RMSE_pp,Ratio_vs_ABM
+Full heterogeneous ABM (recalibrated),Dynamic (sim),"vac, sep, earn, ffr",0.273,0.209,0.764,1.467,1.0
+No-change (random walk),Dynamic (multi-step),UNRATE only,0.309,0.271,—,1.961,1.133
+Historical mean,Dynamic (multi-step),UNRATE only,2.173,2.151,0.0,2.532,7.957
+Drift (12m local trend),Dynamic (multi-step),UNRATE only,6.919,5.895,-0.855,3.289,25.337
+"AR(p), BIC",Dynamic (multi-step),UNRATE only,1.611,1.557,0.637,1.945,5.898
+"ARIMA(p,d,q), AIC grid",Dynamic (multi-step),UNRATE only,1.617,1.564,0.637,2.614,5.923
+"ETS (SES/Holt/Damped, AICc)",Dynamic (multi-step),UNRATE only,0.309,0.272,—,3.622,1.133
+"VAR(p), BIC, UR+LFPR+EPOP",Dynamic (multi-step),"UNRATE, CIVPART, EMRATIO",0.663,0.544,-0.87,3.163,2.429
+"Ridge VAR(2), 5 vars (BVAR approx)",Dynamic (multi-step),"UNRATE, CIVPART, EMRATIO, vac, sep (OOS exog used)",1.264,1.159,0.936,4.945,4.63
+"Beveridge OLS (vac, sep)",Dynamic (multi-step),"vac, sep (OOS exog used)",0.422,0.387,0.826,4.078,1.544
+"DMP-style (theta, sep)",Dynamic (multi-step),"vac, sep (OOS exog used)",0.636,0.547,0.818,1.686,2.329
+Flow-based UR (sep + AR(1) f),Dynamic (multi-step),sep (OOS exog used) + implied f from AR(1),0.426,0.364,0.642,0.985,1.561

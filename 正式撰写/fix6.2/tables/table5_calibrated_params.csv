@@ -1,0 +1,15 @@
+param,V_Simplified,V_LaborOnly,V_Homogeneous,V_Full
+vacancy_rate,0.0794,0.0798,0.0663,0.0423
+fragility_threshold,(inactive=0.5),0.3885,0.3028,0.6352
+acceptance_pressure,(inactive=0.15),0.0896,0.2398,0.171
+h2m_resv_discount,(inactive=0.2),(inactive=0.2),0.2794,0.2947
+lockin_penalty,(inactive=0.3),0.2497,0.1438,0.1568
+duration_thresh,(inactive=6.0),5.177,6.3461,5.571
+exit_jump,(inactive=2.0),1.3968,2.7698,3.6433
+reentry_penalty,(inactive=0.3),0.3948,0.2812,0.227
+h2m_mpc_floor,(inactive=0.95),(inactive=0.95),0.9358,0.869
+wealthy_discount,(inactive=0.3),(inactive=0.3),0.3114,0.4717
+emp_adapt_speed,(inactive=0.05),0.0305,0.1256,0.1002
+unemp_adapt_speed,(inactive=0.2),0.1418,0.1769,0.2831
+pessimism_exit,(inactive=0.2),0.2996,0.3225,0.069
+optimism_entry,(inactive=0.3),0.2727,0.2759,0.1404

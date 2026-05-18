@@ -1,0 +1,9 @@
+attribute,value,notes
+N_agents,100000,Fixed across every fix6.x simulation run
+Generation script,Phase2_Code/population_init_engine.py,386 lines; entry at line 380
+Population file,Phase2_Output/population_v1.npz,"Saved once with seed=42, reused unchanged"
+Initialisation seed,42,Same population for every variant and every evaluation seed
+Heterogeneity dimensions,6,search / labour_fragility / liquidity / housing / income_expect / consumption_rule
+Direct SCE row sampling,No,"Parametric draws (Normal, Lognormal, Exponential, discrete categorical)"
+SCE survey weights applied,No,Phase2_Code/extract_distributions.py contains zero weight references
+Anchoring moments source,SCE Core + LM + Spending + Housing modules,Period 2013-06 .. 2024-12 (per-variable; see SCE_Question_Wording.md)

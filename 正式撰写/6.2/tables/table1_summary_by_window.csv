@@ -1,0 +1,13 @@
+model_variant,code,window,UR_RMSE_pp_mean,UR_RMSE_pp_sd,UR_MAE_pp_mean,UR_corr_mean,UR_corr_sd,LFPR_RMSE_pp_mean,EPOP_RMSE_pp_mean,n_seeds
+Full heterogeneous ABM,M0_Full,train,1.3205,0.0313,1.0399,0.8058,0.0037,1.4487,1.6335,5
+Full heterogeneous ABM,M0_Full,val,2.0016,0.0107,1.54,0.6756,0.0141,1.5659,2.4959,5
+Full heterogeneous ABM,M0_Full,oos,0.2211,0.0068,0.1629,0.7896,0.022,2.2743,2.2141,5
+Homogeneous ABM,D1_Homogeneous,train,3.6013,0.0582,2.4791,0.8382,0.0076,2.3863,3.0462,5
+Homogeneous ABM,D1_Homogeneous,val,1.738,0.0142,1.4371,0.7586,0.0046,7.0789,7.298,5
+Homogeneous ABM,D1_Homogeneous,oos,0.5527,0.0072,0.4095,0.8052,0.0089,8.8471,8.7756,5
+Simplified ABM,D2_Simplified,train,4.0374,0.0759,2.7781,0.8403,0.004,4.9171,4.3091,5
+Simplified ABM,D2_Simplified,val,1.6931,0.0151,1.3927,0.7725,0.0019,9.6054,9.6349,5
+Simplified ABM,D2_Simplified,oos,0.5607,0.0087,0.4127,0.8182,0.0144,10.993,10.8521,5
+Labor-only ABM,D3_LaborOnly,train,1.8444,0.0602,1.463,0.8284,0.0058,2.6489,3.1966,5
+Labor-only ABM,D3_LaborOnly,val,1.8652,0.0229,1.5716,0.7054,0.0131,0.9619,1.9896,5
+Labor-only ABM,D3_LaborOnly,oos,0.4112,0.0382,0.3716,0.7736,0.0261,1.1942,0.9485,5

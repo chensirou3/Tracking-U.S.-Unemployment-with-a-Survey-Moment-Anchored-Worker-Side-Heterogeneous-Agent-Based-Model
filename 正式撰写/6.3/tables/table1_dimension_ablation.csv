@@ -1,0 +1,8 @@
+model_or_ablation,oos_ur_rmse_pp,delta_ur_rmse_pp,seed_sd_ur_pp,ur_corr,lfpr_rmse_pp,epop_rmse_pp,interpretation
+Full heterogeneous ABM (baseline),0.2211,0.0,0.0068,0.7896,2.2743,2.2141,reference
+Flatten Income Growth Expectation,0.2408,0.0197,0.0154,0.774,2.2242,2.1682,negligible — within seed noise standalone
+Flatten Labor Fragility,0.244,0.0229,0.0164,0.7536,2.3075,2.2453,negligible — within seed noise standalone
+Flatten Liquidity Fragility,0.5202,0.2992,0.0308,0.7979,0.4685,0.3235,important — clear standalone contribution to UR fit
+Flatten Labor Search Friction,1.1102,0.8891,0.0197,0.7842,3.7871,4.3459,critical — flattening sharply degrades UR; dominant standalone driver
+Flatten Housing Mobility Friction,0.3829,0.1618,0.0318,0.7765,8.9476,8.3849,important — clear standalone contribution to UR fit
+Flatten Consumption Adjustment Rule,0.2685,0.0474,0.011,0.771,1.9333,1.7885,marginal — small standalone effect; check ladder for interaction

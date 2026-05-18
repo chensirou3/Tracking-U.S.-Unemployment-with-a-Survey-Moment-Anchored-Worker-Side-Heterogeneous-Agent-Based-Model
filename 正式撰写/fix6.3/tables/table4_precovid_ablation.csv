@@ -1,0 +1,8 @@
+variant,label,UR_RMSE_pp,UR_sd_pp,Delta_vs_Full_pp,UR_Corr,UR_Bias_pp,LFPR_RMSE_pp,EPOP_RMSE_pp,interpretation
+V_Full,Full heterogeneous ABM,0.6092,0.0504,0.0,0.104,0.5813,2.6467,2.1608,(reference)
+V_NoSearch,No Search Friction ABM,0.2843,0.0147,-0.3248,0.285,-0.2148,2.7734,2.804,improves on Full
+V_NoLiquidity,No Liquidity Fragility ABM,1.0362,0.0647,0.4271,0.126,1.0188,1.363,0.6656,substantial degradation
+V_NoHousing,No Housing Mobility ABM,0.8179,0.0409,0.2088,0.195,0.7935,2.3953,1.7849,substantial degradation
+V_NoSLH,No Search-Liquidity-Housing ABM,0.4764,0.0497,-0.1328,0.244,0.4249,5.3096,4.8153,improves on Full
+V_NoConsumption,No Consumption Rule ABM,0.8829,0.0439,0.2737,0.018,0.8598,1.899,1.272,substantial degradation
+V_SearchOnly,Search-only heterogeneity ABM,0.867,0.0302,0.2579,0.149,0.8473,2.0104,1.3841,substantial degradation

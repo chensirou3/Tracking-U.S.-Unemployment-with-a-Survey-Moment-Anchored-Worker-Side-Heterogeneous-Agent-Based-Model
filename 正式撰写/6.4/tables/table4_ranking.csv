@@ -1,0 +1,6 @@
+rank,model,OOS_UR_RMSE_pp,OOS_UR_corr,OOS_UR_bias_pp,main_interpretation
+1,Full heterogeneous ABM,0.2211,0.7896,-0.0425,lowest OOS UR RMSE; structural ABM
+2,Beveridge benchmark,0.4216,0.8262,0.3176,strongest external benchmark; uses OOS vacancy/separation
+3,DMP-style benchmark,0.6361,0.8185,-0.5473,structural matching; under-predicts post-COVID UR
+4,VAR(2) benchmark,0.6633,-0.8698,0.5169,high Corr magnitude but negative sign; pure-history extrapolation fails
+5,AR(1) benchmark,1.6106,0.6372,1.5572,reversion to training mean; large bias

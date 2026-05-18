@@ -1,0 +1,14 @@
+model,label,protocol,input_vars,UR_RMSE_pp,UR_MAE_pp,UR_Corr,UR_Bias_pp,RMSE_ratio_vs_ABM,interpretation
+ABM_Full_recalibrated,"Full heterogeneous ABM (recalibrated, §6.2)",Dynamic (sim),"4 macro inputs (vac, sep, earn, ffr)",0.2731,0.2089,0.7636,-0.1669,1.0,Reference. Mean over 5 seeds at rank-0 (cand_idx=32).
+ABM_Full_original,"Full heterogeneous ABM (original baseline, §6.1)",Dynamic (sim),4 macro inputs,N/A,N/A,N/A,N/A,N/A,Legacy §6.1 baseline (not separately recalibrated)
+B0a_NoChange,No-change (random walk),Dynamic (multi-step),UNRATE only,0.3094,0.2714,N/A,-0.002,1.133,ABM better by 0.036 pp
+B0b_HistMean,Historical mean,Dynamic (multi-step),UNRATE only,2.1729,2.1507,0.0,2.1507,7.957,ABM better by 1.900 pp
+B0c_Drift,Drift (12m local trend),Dynamic (multi-step),UNRATE only,6.9191,5.8953,-0.8549,-5.8953,25.337,ABM better by 6.646 pp
+B1_AR,"AR(p), BIC",Dynamic (multi-step),UNRATE only,1.6106,1.5572,0.6372,1.5572,5.898,ABM better by 1.337 pp
+B2_ARIMA,"ARIMA(p,d,q), AIC grid",Dynamic (multi-step),UNRATE only,1.6175,1.5639,0.6372,1.5639,5.923,ABM better by 1.344 pp
+B3_ETS,"ETS (SES/Holt/Damped, AICc)",Dynamic (multi-step),UNRATE only,0.3094,0.2716,N/A,-0.001,1.133,ABM better by 0.036 pp
+B4_VAR,"VAR(p), BIC, UR+LFPR+EPOP",Dynamic (multi-step),"UNRATE, CIVPART, EMRATIO",0.6633,0.5441,-0.8698,0.5169,2.429,ABM better by 0.390 pp
+B5_RidgeVAR,"Ridge VAR(2), 5 vars (BVAR approx)",Dynamic (multi-step),"UNRATE, CIVPART, EMRATIO, vac, sep (OOS exog used)",1.2643,1.1592,0.9356,-1.1592,4.63,ABM better by 0.991 pp
+B6_Beveridge,"Beveridge OLS (vac, sep)",Dynamic (multi-step),"vac, sep (OOS exog used)",0.4216,0.3871,0.8262,0.3176,1.544,ABM better by 0.149 pp
+B7_DMP,"DMP-style (theta, sep)",Dynamic (multi-step),"vac, sep (OOS exog used)",0.6361,0.5473,0.8185,-0.5473,2.329,ABM better by 0.363 pp
+B8_Flow,Flow-based UR (sep + AR(1) f),Dynamic (multi-step),sep (OOS exog used) + implied f from AR(1),0.4263,0.3636,0.6425,0.3444,1.561,ABM better by 0.153 pp

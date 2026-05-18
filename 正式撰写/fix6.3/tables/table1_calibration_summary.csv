@@ -1,0 +1,8 @@
+variant,label,flattened,n_active_dims,n_parameters,calibration_budget,best_train_loss_top1,train_UR_RMSE_pp,preCOVID_UR_RMSE_pp,selected_cand_idx
+V_Full,Full heterogeneous ABM,(none),6,14,100 LHS x 3 seeds,0.1672,1.2575,0.6092,32
+V_NoSearch,No Search Friction ABM,search,5,14,100 LHS x 3 seeds,0.2621,1.9693,0.2843,48
+V_NoLiquidity,No Liquidity Fragility ABM,liquidity,5,14,100 LHS x 3 seeds,0.3736,1.2653,1.0362,77
+V_NoHousing,No Housing Mobility ABM,housing,5,14,100 LHS x 3 seeds,0.2031,1.5909,0.8179,79
+V_NoSLH,No Search-Liquidity-Housing ABM,search+liquidity+housing,3,14,100 LHS x 3 seeds,0.4667,1.2057,0.4764,14
+V_NoConsumption,No Consumption Rule ABM,consumption_rule,5,14,100 LHS x 3 seeds,0.1841,1.2951,0.8829,60
+V_SearchOnly,Search-only heterogeneity ABM,liquidity+housing,4,14,100 LHS x 3 seeds,0.4299,1.4836,0.867,61

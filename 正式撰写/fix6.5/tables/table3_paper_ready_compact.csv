@@ -1,0 +1,7 @@
+finding,number,interpretation
+Post-COVID normalization UR tracking,0.221 ± 0.007 pp (legacy baseline) / 0.273 ± 0.023 pp (recalibrated V_Full),Headline tracking holds under both Phase 6 baseline and §6.2 recalibration
+COVID crisis performance,"UR RMSE 2.82 pp, bias −2.07 pp, max abs 6.07 pp",Direction correct (corr 0.76) but magnitude not captured; crisis claim NOT supported
+Re-calibrated controls (heterogeneity gap),Full−Simplified = 0.288 pp (was 2.116 pp under shared parameters),Heterogeneity advantage survives recalibration but is much smaller
+Re-calibrated ablation (Search Friction),No-Search Δ = +0.812 pp (only ablation that survives at >0.5 pp),Search Friction is the only standalone dimension with robust ablation evidence
+Stronger benchmark comparison (dynamic post-COVID),ABM 0.273 vs no-change/ETS 0.309 (ratio 1.13×); ABM rank 1 of 12,Competitive lead inside seed s.d. (±0.023 pp); not overwhelming dominance
+Parameter weak identification,10/14 parameters CV ≥ 0.40 across 5 calibration methods,Predictions/decompositions are method-invariant; structural reads require bands

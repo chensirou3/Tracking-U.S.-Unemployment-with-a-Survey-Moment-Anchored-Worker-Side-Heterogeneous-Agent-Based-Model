@@ -1,0 +1,13 @@
+model,label,dynamic_RMSE_pp,rolling_RMSE_pp,delta_pp,note
+ABM_Full_recalibrated,"Full heterogeneous ABM (recalibrated, §6.2)",0.2731,N/A (sim only),N/A,ABM does not consume observed OOS UR for nowcasting
+B0a_NoChange,No-change (random walk),0.3094,0.1152,0.1942,rolling sees lagged UR each step
+B0b_HistMean,Historical mean,2.1729,1.9955,0.1774,rolling sees lagged UR each step
+B0c_Drift,Drift (12m local trend),6.9191,0.1339,6.7852,rolling sees lagged UR each step
+B1_AR,"AR(p), BIC",1.6106,0.1608,1.4498,rolling sees lagged UR each step
+B2_ARIMA,"ARIMA(p,d,q), AIC grid",1.6175,0.1614,1.4561,rolling sees lagged UR each step
+B3_ETS,"ETS (SES/Holt/Damped, AICc)",0.3094,0.115,0.1944,rolling sees lagged UR each step
+B4_VAR,"VAR(p), BIC, UR+LFPR+EPOP",0.6633,0.2227,0.4406,rolling sees lagged UR each step
+B5_RidgeVAR,"Ridge VAR(2), 5 vars (BVAR approx)",1.2643,0.2336,1.0307,rolling sees lagged UR each step
+B6_Beveridge,"Beveridge OLS (vac, sep)",0.4216,0.3847,0.0369,rolling sees lagged UR each step
+B7_DMP,"DMP-style (theta, sep)",0.6361,0.5518,0.0843,rolling sees lagged UR each step
+B8_Flow,Flow-based UR (sep + AR(1) f),0.4263,0.1718,0.2545,rolling sees lagged UR each step

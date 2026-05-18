@@ -1,0 +1,72 @@
+==============================================================================
+PACKAGE C LADDER RERUN (6.3) — 9 levels × 5 seeds
+  windows: ['train', 'val', 'oos']  period: 2001-01..2026-02 (302 months)
+  parameters from candidate_baseline.json
+==============================================================================
+
+[L0]  ladder=core  n_active=0  active=[]
+  seed=42: OOS UR_RMSE=0.547 pp  Corr=0.817  LFPR=8.841 pp  EPOP=8.766 pp  (9.9s)
+  seed=137: OOS UR_RMSE=0.553 pp  Corr=0.810  LFPR=8.875 pp  EPOP=8.792 pp  (9.0s)
+  seed=2024: OOS UR_RMSE=0.544 pp  Corr=0.807  LFPR=8.548 pp  EPOP=8.486 pp  (8.9s)
+  seed=888: OOS UR_RMSE=0.554 pp  Corr=0.801  LFPR=8.895 pp  EPOP=8.837 pp  (8.8s)
+  seed=1234: OOS UR_RMSE=0.565 pp  Corr=0.791  LFPR=9.077 pp  EPOP=8.996 pp  (8.7s)
+
+[L1]  ladder=core  n_active=1  active=['labor_frag']
+  seed=42: OOS UR_RMSE=0.556 pp  Corr=0.793  LFPR=8.847 pp  EPOP=8.768 pp  (8.6s)
+  seed=137: OOS UR_RMSE=0.564 pp  Corr=0.789  LFPR=8.793 pp  EPOP=8.732 pp  (8.8s)
+  seed=2024: OOS UR_RMSE=0.545 pp  Corr=0.791  LFPR=8.878 pp  EPOP=8.806 pp  (9.1s)
+  seed=888: OOS UR_RMSE=0.543 pp  Corr=0.788  LFPR=8.885 pp  EPOP=8.794 pp  (9.0s)
+  seed=1234: OOS UR_RMSE=0.544 pp  Corr=0.815  LFPR=8.937 pp  EPOP=8.855 pp  (8.8s)
+
+[L2]  ladder=core  n_active=2  active=['labor_frag', 'search']
+  seed=42: OOS UR_RMSE=1.065 pp  Corr=0.793  LFPR=7.006 pp  EPOP=6.018 pp  (8.9s)
+  seed=137: OOS UR_RMSE=1.080 pp  Corr=0.792  LFPR=6.745 pp  EPOP=5.757 pp  (9.0s)
+  seed=2024: OOS UR_RMSE=1.070 pp  Corr=0.785  LFPR=6.966 pp  EPOP=5.977 pp  (9.0s)
+  seed=888: OOS UR_RMSE=1.036 pp  Corr=0.804  LFPR=6.625 pp  EPOP=5.675 pp  (9.3s)
+  seed=1234: OOS UR_RMSE=1.023 pp  Corr=0.756  LFPR=6.979 pp  EPOP=6.026 pp  (9.5s)
+
+[L3]  ladder=core  n_active=3  active=['income_exp', 'labor_frag', 'search']
+  seed=42: OOS UR_RMSE=1.064 pp  Corr=0.757  LFPR=7.040 pp  EPOP=6.054 pp  (9.0s)
+  seed=137: OOS UR_RMSE=1.027 pp  Corr=0.776  LFPR=7.044 pp  EPOP=6.078 pp  (8.7s)
+  seed=2024: OOS UR_RMSE=1.078 pp  Corr=0.807  LFPR=7.085 pp  EPOP=6.088 pp  (9.2s)
+  seed=888: OOS UR_RMSE=1.068 pp  Corr=0.818  LFPR=6.563 pp  EPOP=5.596 pp  (9.0s)
+  seed=1234: OOS UR_RMSE=1.053 pp  Corr=0.789  LFPR=6.859 pp  EPOP=5.889 pp  (8.9s)
+
+[L4]  ladder=core  n_active=4  active=['income_exp', 'labor_frag', 'liquidity', 'search']
+  seed=42: OOS UR_RMSE=0.547 pp  Corr=0.809  LFPR=8.730 pp  EPOP=8.041 pp  (10.0s)
+  seed=137: OOS UR_RMSE=0.512 pp  Corr=0.787  LFPR=8.523 pp  EPOP=7.874 pp  (9.7s)
+  seed=2024: OOS UR_RMSE=0.537 pp  Corr=0.759  LFPR=8.703 pp  EPOP=8.024 pp  (9.8s)
+  seed=888: OOS UR_RMSE=0.504 pp  Corr=0.819  LFPR=8.534 pp  EPOP=7.881 pp  (10.7s)
+  seed=1234: OOS UR_RMSE=0.487 pp  Corr=0.770  LFPR=8.612 pp  EPOP=7.978 pp  (12.4s)
+
+[L5]  ladder=core  n_active=5  active=['housing', 'income_exp', 'labor_frag', 'liquidity', 'search']
+  seed=42: OOS UR_RMSE=0.275 pp  Corr=0.768  LFPR=1.744 pp  EPOP=1.598 pp  (14.2s)
+  seed=137: OOS UR_RMSE=0.261 pp  Corr=0.780  LFPR=1.892 pp  EPOP=1.753 pp  (12.5s)
+  seed=2024: OOS UR_RMSE=0.257 pp  Corr=0.770  LFPR=1.991 pp  EPOP=1.858 pp  (12.3s)
+  seed=888: OOS UR_RMSE=0.287 pp  Corr=0.768  LFPR=1.918 pp  EPOP=1.771 pp  (12.4s)
+  seed=1234: OOS UR_RMSE=0.262 pp  Corr=0.769  LFPR=2.121 pp  EPOP=1.963 pp  (13.1s)
+
+[L6]  ladder=core  n_active=6  active=['consumption_rule', 'housing', 'income_exp', 'labor_frag', 'liquidity', 'search']
+  seed=42: OOS UR_RMSE=0.232 pp  Corr=0.780  LFPR=2.113 pp  EPOP=2.055 pp  (14.1s)
+  seed=137: OOS UR_RMSE=0.220 pp  Corr=0.758  LFPR=2.115 pp  EPOP=2.076 pp  (13.7s)
+  seed=2024: OOS UR_RMSE=0.211 pp  Corr=0.825  LFPR=2.323 pp  EPOP=2.263 pp  (13.7s)
+  seed=888: OOS UR_RMSE=0.222 pp  Corr=0.800  LFPR=2.304 pp  EPOP=2.244 pp  (13.7s)
+  seed=1234: OOS UR_RMSE=0.220 pp  Corr=0.785  LFPR=2.517 pp  EPOP=2.433 pp  (13.7s)
+
+[G2]  ladder=layer  n_active=4  active=['housing', 'labor_frag', 'liquidity', 'search']
+  seed=42: OOS UR_RMSE=0.257 pp  Corr=0.799  LFPR=1.805 pp  EPOP=1.712 pp  (12.5s)
+  seed=137: OOS UR_RMSE=0.316 pp  Corr=0.751  LFPR=1.965 pp  EPOP=1.812 pp  (12.7s)
+  seed=2024: OOS UR_RMSE=0.244 pp  Corr=0.797  LFPR=1.932 pp  EPOP=1.786 pp  (12.5s)
+  seed=888: OOS UR_RMSE=0.266 pp  Corr=0.806  LFPR=1.918 pp  EPOP=1.775 pp  (12.1s)
+  seed=1234: OOS UR_RMSE=0.251 pp  Corr=0.822  LFPR=2.084 pp  EPOP=1.939 pp  (11.9s)
+
+[G3]  ladder=layer  n_active=5  active=['consumption_rule', 'housing', 'labor_frag', 'liquidity', 'search']
+  seed=42: OOS UR_RMSE=0.252 pp  Corr=0.742  LFPR=2.221 pp  EPOP=2.144 pp  (13.2s)
+  seed=137: OOS UR_RMSE=0.254 pp  Corr=0.786  LFPR=2.164 pp  EPOP=2.101 pp  (13.0s)
+  seed=2024: OOS UR_RMSE=0.219 pp  Corr=0.831  LFPR=2.210 pp  EPOP=2.200 pp  (13.1s)
+  seed=888: OOS UR_RMSE=0.225 pp  Corr=0.764  LFPR=2.151 pp  EPOP=2.095 pp  (13.2s)
+  seed=1234: OOS UR_RMSE=0.253 pp  Corr=0.747  LFPR=2.375 pp  EPOP=2.301 pp  (13.3s)
+
+Total wall time: 493.6s
+Saved: 正式撰写/6.3/ladder_metrics.json
+Saved: 正式撰写/6.3/ladder_series.npz

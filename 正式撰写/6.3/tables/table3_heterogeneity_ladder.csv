@@ -1,0 +1,10 @@
+level,ladder,n_active_dim,active_dims,oos_ur_rmse_pp,delta_vs_L6_pp,seed_sd_ur_pp,ur_corr,lfpr_rmse_pp,epop_rmse_pp,note
+L0,core,0,,0.5527,0.3316,0.0072,0.8052,8.8471,8.7756,
+L1,core,1,labor_frag,0.5503,0.3292,0.0085,0.7953,8.868,8.7909,
+L2,core,2,labor_frag|search,1.0545,0.8334,0.0216,0.786,6.8642,5.8905,
+L3,core,3,income_exp|labor_frag|search,1.0579,0.8369,0.0174,0.7894,6.9181,5.941,
+L4,core,4,income_exp|labor_frag|liquidity|search,0.5172,0.2961,0.0219,0.7888,8.6205,7.9597,
+L5,core,5,housing|income_exp|labor_frag|liquidity|search,0.2685,0.0474,0.011,0.771,1.9333,1.7885,
+L6,core,6,consumption_rule|housing|income_exp|labor_frag|liquidity|search,0.2211,0.0,0.0068,0.7896,2.2743,2.2141,reference
+G2,layer,4,housing|labor_frag|liquidity|search,0.2668,0.0457,0.0255,0.7947,1.9409,1.8049,
+G3,layer,5,consumption_rule|housing|labor_frag|liquidity|search,0.2408,0.0197,0.0154,0.774,2.2242,2.1682,

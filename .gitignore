@@ -1,0 +1,52 @@
+# === Large archive duplicates (~900 MB) ===
+paper_stage_bundle/
+real_data_experiments/
+
+# === NY Fed SCE raw survey data (298 MB; FRBNY redistribution terms) ===
+SCE_Data/
+
+# === Phase3 intermediate outputs (289 MB; includes 280 MB agent_decision_data.npz) ===
+Phase3_Output/
+# Keep the small specs and schema documents inside Phase3_Output:
+!Phase3_Output/*.md
+!Phase3_Output/output_schema.json
+
+# === Literature PDFs (19 MB x 2 duplicates) ===
+**/abm文献/
+
+# === Large model artifacts ===
+*.npz
+
+# === Calibration LHS checkpoints (large intermediate state) ===
+**/checkpoints/
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# === Manuscript drafts (kept local) ===
+*.docx
+
+# === Office lock files ===
+~$*.xlsx
+~$*.xls
+~$*.docx
+~$*.doc
+
+# === IDE / Agent local state ===
+.vscode/
+.specstory/
+.augment/
+.idea/
+
+# === One-shot helper scripts (kept local) ===
+_largest_files.py
+_largest_files.txt
+_test.txt
+撰写版本2/实验结果/_scripts/_inspect_*.py
+
+# === OS ===
+Thumbs.db
+.DS_Store

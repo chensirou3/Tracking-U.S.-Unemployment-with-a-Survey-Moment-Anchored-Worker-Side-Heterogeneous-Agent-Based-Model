@@ -1,0 +1,11 @@
+metric,value
+RMSE_Simplified_pp,0.5616
+RMSE_LaborOnly_pp,0.3626
+RMSE_Homogeneous_pp,0.5448
+RMSE_Full_pp,0.2731
+Total_gain_Simplified_minus_Full_pp,0.2885
+Mechanism_gain_Simplified_minus_Homogeneous_pp,0.0168
+Heterogeneity_gain_Homogeneous_minus_Full_pp,0.2718
+Household_block_gain_LaborOnly_minus_Full_pp,0.0895
+Heterogeneity_share_pct,94.19
+Mechanism_share_pct,5.81

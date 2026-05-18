@@ -1,0 +1,119 @@
+==============================================================================
+Section 6.4 (revised) — Stronger Forecast Benchmark Comparison
+==============================================================================
+T=302 months;  dates 2001-01 .. 2026-02
+OOS UR NaN at indices: [297]
+market_tightness range [0.567, 2.500], separation_rate range [0.0090, 0.0500]
+
+=== regime: pre_covid_stable  (2018-01..2019-12)  fit=[0,204)  oos=[204,228)  horizon=24 ===
+--- Protocol 1: Dynamic multi-step ---
+  B0a_NoChange: RMSE=0.3571 pp  Corr=+nan  bias=+0.3167
+  B0b_HistMean: RMSE=2.4629 pp  Corr=+nan  bias=+2.4574
+  B0c_Drift: RMSE=0.2754 pp  Corr=+0.8500  bias=-0.2122
+  B1_AR (p=1): RMSE=0.4737 pp  Corr=-0.8502
+  B2_ARIMA (2, 0, 2): RMSE=0.7371 pp  Corr=-0.8108
+  B3_ETS (Holt): RMSE=0.3689 pp  Corr=+0.8500
+  B4_VAR (p=1): RMSE=0.5616 pp  Corr=+0.8500
+  B5_RidgeVAR (lam=0.001): RMSE=0.9582 pp  Corr=+0.8183
+  B6_Beveridge: RMSE=0.3782 pp  Corr=+0.2973
+  B7_DMP (A=0.225, alpha=0.085): RMSE=0.2568 pp  Corr=+0.5554
+  B8_Flow (rho_f=0.818): RMSE=1.0594 pp  Corr=-0.7930
+--- Protocol 2: Rolling one-step-ahead ---
+  B0a_NoChange: RMSE=0.1099 pp  Corr=+0.7955  bias=+0.0208
+  B0b_HistMean: RMSE=2.3357 pp  Corr=+0.8486  bias=+2.3331
+  B0c_Drift: RMSE=0.1115 pp  Corr=+0.7773  bias=-0.0086
+  B1_AR: RMSE=0.1117 pp  Corr=+0.7958  bias=+0.0261
+  B2_ARIMA: RMSE=0.1161 pp  Corr=+0.7749  bias=+0.0232
+  B3_ETS: RMSE=0.1130 pp  Corr=+0.7758  bias=-0.0086
+  B4_VAR: RMSE=0.1075 pp  Corr=+0.7951  bias=-0.0189
+  B5_RidgeVAR: RMSE=0.1489 pp  Corr=+0.7741  bias=-0.1015
+  B6_Beveridge: RMSE=0.3561 pp  Corr=+0.3454  bias=+0.2052
+  B7_DMP: RMSE=0.2341 pp  Corr=+0.4881  bias=-0.1717
+  B8_Flow: RMSE=0.1480 pp  Corr=+0.7015  bias=+0.0601
+  -- regime pre_covid_stable done in 7.4s
+
+=== regime: covid_crisis_mar  (2020-03..2021-12)  fit=[0,230)  oos=[230,252)  horizon=22 ===
+--- Protocol 1: Dynamic multi-step ---
+  B0a_NoChange: RMSE=4.5109 pp  Corr=-0.0000  bias=-3.5136
+  B0b_HistMean: RMSE=3.0185 pp  Corr=-0.0000  bias=-1.0528
+  B0c_Drift: RMSE=4.6114 pp  Corr=+0.7412  bias=-3.6986
+  B1_AR (p=1): RMSE=4.5006 pp  Corr=-0.7416
+  B2_ARIMA (2, 0, 2): RMSE=4.3841 pp  Corr=-0.7205
+  B3_ETS (DampedHolt): RMSE=4.6329 pp  Corr=+0.7431
+  B4_VAR (p=1): RMSE=4.7099 pp  Corr=+0.7455
+  B5_RidgeVAR (lam=0.001): RMSE=4.0521 pp  Corr=+0.6670
+  B6_Beveridge: RMSE=8.4336 pp  Corr=-0.3016
+  B7_DMP (A=0.224, alpha=0.111): RMSE=2.9290 pp  Corr=+0.9200
+  B8_Flow (rho_f=0.844): RMSE=2.2934 pp  Corr=+0.9256
+--- Protocol 2: Rolling one-step-ahead ---
+  B0a_NoChange: RMSE=2.3591 pp  Corr=+0.6549  bias=-0.0182
+  B0b_HistMean: RMSE=3.0089 pp  Corr=-0.6186  bias=-0.9522
+  B0c_Drift: RMSE=2.5090 pp  Corr=+0.6611  bias=+0.0692
+  B1_AR: RMSE=4.4767 pp  Corr=+0.6177  bias=+0.7007
+  B2_ARIMA: RMSE=4.6330 pp  Corr=+0.6190  bias=+0.7839
+  B3_ETS: RMSE=3.5178 pp  Corr=+0.6540  bias=+0.5298
+  B4_VAR: RMSE=2.2926 pp  Corr=+0.6475  bias=-0.1811
+  B5_RidgeVAR: RMSE=2.6360 pp  Corr=+0.7037  bias=-0.3065
+  B6_Beveridge: RMSE=6.0332 pp  Corr=+0.1956  bias=-4.1205
+  B7_DMP: RMSE=2.5606 pp  Corr=+0.9205  bias=-2.2662
+  B8_Flow: RMSE=1.7729 pp  Corr=+0.8219  bias=-0.1638
+  -- regime covid_crisis_mar done in 7.2s
+
+=== regime: post_covid_norm  (2022-01..2026-02)  fit=[0,252)  oos=[252,302)  horizon=50 ===
+--- Protocol 1: Dynamic multi-step ---
+  B0a_NoChange: RMSE=0.3094 pp  Corr=+nan  bias=-0.0020
+  B0b_HistMean: RMSE=2.1729 pp  Corr=+0.0000  bias=+2.1507
+  B0c_Drift: RMSE=6.9191 pp  Corr=-0.8549  bias=-5.8953
+  B1_AR (p=1): RMSE=1.6106 pp  Corr=+0.6372
+  B2_ARIMA (1, 0, 0): RMSE=1.6175 pp  Corr=+0.6372
+  B3_ETS (SES): RMSE=0.3094 pp  Corr=+nan
+  B4_VAR (p=2): RMSE=0.6633 pp  Corr=-0.8698
+  B5_RidgeVAR (lam=0.001): RMSE=1.2643 pp  Corr=+0.9356
+  B6_Beveridge: RMSE=0.4216 pp  Corr=+0.8262
+  B7_DMP (A=0.214, alpha=0.411): RMSE=0.6361 pp  Corr=+0.8185
+  B8_Flow (rho_f=0.716): RMSE=0.4263 pp  Corr=+0.6425
+--- Protocol 2: Rolling one-step-ahead ---
+  B0a_NoChange: RMSE=0.1152 pp  Corr=+0.9297  bias=-0.0102
+  B0b_HistMean: RMSE=1.9955 pp  Corr=-0.8180  bias=+1.9551
+  B0c_Drift: RMSE=0.1339 pp  Corr=+0.9268  bias=-0.0356
+  B1_AR: RMSE=0.1608 pp  Corr=+0.9243  bias=+0.1087
+  B2_ARIMA: RMSE=0.1614 pp  Corr=+0.9243  bias=+0.1094
+  B3_ETS: RMSE=0.1150 pp  Corr=+0.9299  bias=-0.0102
+  B4_VAR: RMSE=0.2227 pp  Corr=+0.8227  bias=+0.1086
+  B5_RidgeVAR: RMSE=0.2336 pp  Corr=+0.8450  bias=-0.1004
+  B6_Beveridge: RMSE=0.3847 pp  Corr=+0.8156  bias=+0.2887
+  B7_DMP: RMSE=0.5518 pp  Corr=+0.7980  bias=-0.4196
+  B8_Flow: RMSE=0.1718 pp  Corr=+0.8508  bias=+0.0222
+  -- regime post_covid_norm done in 8.3s
+
+=== regime: full_post_2018  (2018-01..2026-02)  fit=[0,204)  oos=[204,302)  horizon=98 ===
+--- Protocol 1: Dynamic multi-step ---
+  B0a_NoChange: RMSE=1.9612 pp  Corr=-0.0000  bias=-0.4711
+  B0b_HistMean: RMSE=2.5322 pp  Corr=-0.0000  bias=+1.6696
+  B0c_Drift: RMSE=3.2891 pp  Corr=+0.1544  bias=-2.5460
+  B1_AR (p=1): RMSE=1.9448 pp  Corr=-0.1431
+  B2_ARIMA (2, 0, 2): RMSE=2.6139 pp  Corr=-0.0997
+  B3_ETS (Holt): RMSE=3.6217 pp  Corr=+0.1544
+  B4_VAR (p=1): RMSE=3.1630 pp  Corr=+0.0300
+  B5_RidgeVAR (lam=0.001): RMSE=4.9447 pp  Corr=+0.4320
+  B6_Beveridge: RMSE=4.0777 pp  Corr=-0.4074
+  B7_DMP (A=0.225, alpha=0.085): RMSE=1.6858 pp  Corr=+0.8270
+  B8_Flow (rho_f=0.818): RMSE=0.9848 pp  Corr=+0.9134
+--- Protocol 2: Rolling one-step-ahead ---
+  B0a_NoChange: RMSE=1.1279 pp  Corr=+0.8246  bias=-0.0031
+  B0b_HistMean: RMSE=2.3529 pp  Corr=+0.1207  bias=+1.3990
+  B0c_Drift: RMSE=1.2000 pp  Corr=+0.8199  bias=-0.0039
+  B1_AR: RMSE=2.1358 pp  Corr=+0.7381  bias=+0.2214
+  B2_ARIMA: RMSE=2.2102 pp  Corr=+0.7373  bias=+0.2384
+  B3_ETS: RMSE=1.6868 pp  Corr=+0.7870  bias=+0.1204
+  B4_VAR: RMSE=1.1005 pp  Corr=+0.8222  bias=-0.0002
+  B5_RidgeVAR: RMSE=1.2685 pp  Corr=+0.8149  bias=-0.1454
+  B6_Beveridge: RMSE=2.8921 pp  Corr=-0.0298  bias=-0.7319
+  B7_DMP: RMSE=1.2867 pp  Corr=+0.8705  bias=-0.7638
+  B8_Flow: RMSE=0.8564 pp  Corr=+0.8999  bias=-0.0088
+  -- regime full_post_2018 done in 14.8s
+
+Saved benchmark_metrics.json and benchmark_series.npz
+==============================================================================
+Section 6.4 benchmark rerun done in 37.8 s
+==============================================================================

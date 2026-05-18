@@ -1,0 +1,10 @@
+Variant,Removed / flattened dimension,Re-calibrated?,UR RMSE pp,Delta vs Full pp,LFPR RMSE pp,EPOP RMSE pp,Interpretation
+V_Full,(none - reference),Yes,0.2731,0.0,4.8327,4.7566,(reference)
+V_NoSearch,Search-friction heterogeneity,Yes,1.0854,0.8123,5.6737,6.162,substantial degradation
+V_NoLiquidity,Liquidity-fragility heterogeneity,Yes,0.3776,0.1046,2.8907,2.6054,mild degradation
+V_NoHousing,Housing mobility heterogeneity,Yes,0.2369,-0.0362,4.4446,4.2293,improves on Full
+V_NoSLH,Search + Liquidity + Housing (joint),Yes,0.7025,0.4294,8.1705,8.2889,substantial degradation
+V_NoConsumption,Consumption rule heterogeneity,Yes,0.2481,-0.0249,3.5446,3.3415,improves on Full
+V_SearchOnly,All except Search,Yes,0.3098,0.0367,3.8917,3.6287,comparable to Full
+,,,,,,,
+Footnote,,,"Main recent evaluation window (2022-01..2026-02). Recalibrated ablations are diagnostic, not structural mechanism identification; negative Δ reflects parameter reassignment absorbing the removed dimension. V_Full headline = 0.273 pp.",,,,

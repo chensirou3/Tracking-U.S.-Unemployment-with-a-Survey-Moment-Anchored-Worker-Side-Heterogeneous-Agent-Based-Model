@@ -1,0 +1,9 @@
+window,seed,UR_RMSE_pp
+post_covid_norm,42,0.2322
+post_covid_norm,137,0.2199
+post_covid_norm,2024,0.2109
+post_covid_norm,888,0.2223
+post_covid_norm,1234,0.2202
+,MEAN,0.2211
+,SD,0.0076
+,CV_pct,3.437

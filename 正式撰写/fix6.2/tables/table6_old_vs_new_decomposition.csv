@@ -1,0 +1,10 @@
+metric,old,new
+rmse_full_pp,0.214,0.2731
+rmse_homog_pp,2.214,0.5448
+rmse_simple_pp,2.33,0.5616
+rmse_laboronly_pp,0.291,0.3626
+total_gain_pp,2.116,0.2885
+het_share_pct,97.6,94.19
+mech_share_pct,2.4,5.81
+hh_block_gain_pp,0.077,0.0895
+comment,legacy: controls run at default-config / baseline params (NOT separately calibrated),new: each variant separately re-calibrated via 100/100/100/30 LHS + 3 seeds

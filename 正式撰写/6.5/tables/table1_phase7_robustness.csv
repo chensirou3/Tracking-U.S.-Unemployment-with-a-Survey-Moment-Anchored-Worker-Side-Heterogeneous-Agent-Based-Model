@@ -1,0 +1,13 @@
+block,variant,ur_rmse_mean_pp,ur_rmse_std_pp,cv,note
+R1_multi_seed,conservative,0.2419,0.004,0.0165,"5 seeds {42,137,2024,888,1234}"
+R1_multi_seed,baseline,0.2211,0.0068,0.0308,"5 seeds {42,137,2024,888,1234}"
+R1_multi_seed,aggressive,0.2211,0.0068,0.0308,"5 seeds {42,137,2024,888,1234}"
+R2_init_window,init_24,0.2322,,0.0,"lfpr_rmse_pp=2.113, ur_corr=0.780"
+R2_init_window,init_36,0.2322,,0.0,"lfpr_rmse_pp=2.113, ur_corr=0.780"
+R2_init_window,init_48,0.2322,,0.0,"lfpr_rmse_pp=2.113, ur_corr=0.780"
+R3_weight_perturb,w_ur_3.0,,,,"composite=0.3566, ur_comp=0.0070, tier2=0.3497"
+R3_weight_perturb,w_ur_5.0,,,,"composite=0.3613, ur_comp=0.0116, tier2=0.3497"
+R3_weight_perturb,w_ur_7.0,,,,"composite=0.3659, ur_comp=0.0163, tier2=0.3497"
+R4_informal_work,beta_0.0,0.2322,,,No adjustment (raw BLS)
+R4_informal_work,beta_0.5,0.2967,,,Assume 50% of side-hustlers behave like employed
+R4_informal_work,beta_1.0,0.4821,,,Assume 100% of side-hustlers behave like employed

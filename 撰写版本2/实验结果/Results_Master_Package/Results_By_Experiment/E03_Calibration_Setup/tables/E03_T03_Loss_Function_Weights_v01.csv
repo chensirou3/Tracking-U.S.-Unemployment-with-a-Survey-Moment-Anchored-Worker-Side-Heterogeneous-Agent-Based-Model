@@ -1,0 +1,7 @@
+tier,target,metric,weight,anchor_value,anchor_source
+1,UR (unemployment rate),RMSE (pp),5.0,FRED UNRATE (BLS),BLS observation
+2,LFPR (labour-force participation rate),RMSE (pp),2.0,FRED CIVPART (BLS),BLS observation
+2,EPOP (employment-population ratio),RMSE (pp),2.0,FRED EMRATIO (BLS),BLS observation
+2,EU rate (employment→unemployment),|dev| × 10,1.0,0.015 / month,BLS gross flows
+2,UE rate (unemployment→employment),|dev| × 5,1.0,0.25 / month,BLS gross flows
+3,H2M share (hand-to-mouth),|dev| × 2,0.5,0.30,Kaplan-Violante (2014)

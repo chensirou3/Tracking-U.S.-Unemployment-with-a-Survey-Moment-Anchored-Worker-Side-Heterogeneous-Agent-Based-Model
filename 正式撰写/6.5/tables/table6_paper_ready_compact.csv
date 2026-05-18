@@ -1,0 +1,12 @@
+dimension,metric,value,verdict
+Multi-seed,OOS UR RMSE CV across 5 seeds,3.08%,ROBUST
+Initialisation window,"UR RMSE range across init={24,36,48}",0.000 pp (identical),ROBUST
+"UR-loss weight (3, 5, 7)",Δ tier-2 component,0.000,ROBUST (tier-2 unchanged)
+"Informal-work β (0, 0.5, 1)",RMSE vs adjusted target (raw → β=1),0.232 → 0.482 pp,TARGET-DEFINITION SENSITIVE (post-hoc adjustment)
+Training window (10 splits),M0 win-rate vs B3 Beveridge; mean RMSE on 7 OOS-window splits,10/10 wins; 0.245 ± 0.011 pp,ROBUST
+Parameter drift,# params with CV ≥ 0.30 across 10 splits,"0 of 14 (8 stable, 6 mild)",ROBUST
+Forecast horizon h=1..36,M0 log-log RMSE slope,-0.092 (shallowest of 8 models),ROBUST
+Agent count N=5k..300k,Plateau threshold |ΔRMSE|<0.015 pp,satisfied at N ≥ 50k,ROBUST (default 100k well past plateau)
+Calibration method (5 methods),CV of best-test UR RMSE,5.55% (range 0.214–0.243 pp),PREDICTION ROBUST
+Calibration method — parameters,# params with top-5 CV ≥ 0.40 in any method,10 of 14,PARAMETERS WEAKLY IDENTIFIED
+Calibration method — advantage,share_heterogeneity mean ± SD across methods,57.2 ± 3.35 pp,ROBUST

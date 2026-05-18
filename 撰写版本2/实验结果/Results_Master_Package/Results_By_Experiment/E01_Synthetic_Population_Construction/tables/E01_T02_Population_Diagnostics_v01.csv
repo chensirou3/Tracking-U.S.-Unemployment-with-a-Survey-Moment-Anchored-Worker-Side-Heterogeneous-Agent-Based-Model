@@ -1,0 +1,15 @@
+dimension,type,family,anchor_moment,status
+age,categorical (5 bins),discrete rng.choice,BLS LFS age shares,READY
+education,categorical (4 bins),discrete rng.choice,BLS LFS edu shares,READY
+employment_state,categorical (E/U/N),discrete rng.choice by age,BLS UNRATE/EMRATIO/LFPR,READY
+housing_status,categorical (4 bins),rule-based discrete,SCE HQH5/HQH6 (synthetic label),READY
+liquidity_type,categorical (3 bins),discrete rng.choice,SCE Q33 share,READY
+consumption_rule,categorical (3 bins),discrete rng.choice,SCE qsp12n/qsp13new,READY
+labour_fragility,continuous,"Normal(mu_by_cell, sigma)",SCE Q13new/Q22new moments,READY
+income_expectation,continuous,"Normal(linear-in-fragility, sd)",SCE Q24_cent50,READY
+income_uncertainty,continuous,Exponential(scale),SCE Q24_iqr,READY
+reservation_wage,continuous,"Lognormal(ln(1.05), 0.25)",SCE rw2a/rw2b moments,READY
+search_intensity,continuous (U only),Exponential(10),SCE js7 moment,READY
+mobility_friction,continuous,Normal by cluster,synthetic construct,READY WITH CAVEAT
+flexibility_index,continuous,Normal by cluster,synthetic construct,READY WITH CAVEAT
+MPC_neg_pos_asymmetry,ratio,"mpc_neg/max(mpc_pos,0.01)",derived at line 315,READY

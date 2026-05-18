@@ -1,0 +1,7 @@
+Accounting component,Definition,Gain (pp),Share (% of total gain),Interpretation
+Total Gain,RMSE(Simplified) - RMSE(Full),0.2885,100.00,Total advantage of full model vs simplified baseline
+Heterogeneity-Associated Gain,RMSE(Homogeneous) - RMSE(Full),0.2718,94.19,Within-experiment accounting; not causal
+Mechanism-Associated Gain,RMSE(Simplified) - RMSE(Homogeneous),0.0168,5.81,Marginal contribution of mechanisms with flat population
+Household-Block Gain,RMSE(LaborOnly) - RMSE(Full),0.0895,31.02,Marginal contribution of household block on top of labour-only
+,,,,
+Footnote,,,,"Within-experiment accounting partition, not a causal decomposition. Shares are window-specific (main recent evaluation window only) and reflect RMSE differences across separately calibrated variants."

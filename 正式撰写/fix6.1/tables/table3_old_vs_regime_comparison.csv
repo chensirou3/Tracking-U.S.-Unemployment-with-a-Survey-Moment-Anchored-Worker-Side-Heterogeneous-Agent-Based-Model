@@ -1,0 +1,6 @@
+window,period,n_valid,UR_RMSE_pp,UR_corr,interpretation
+train,2004-01..2017-12,168,1.3205,0.8058,Includes 2008-09 Great Recession; model misses level of crisis
+validation,2018-01..2021-12,48,2.0016,0.6756,Dominated by 2020 COVID shock; large RMSE driven by crisis months
+original_oos,2022-01..2026-02,49,0.2211,0.7896,Post-COVID normalization regime; headline 0.221 pp result
+covid_crisis_mar,2020-03..2021-12,22,2.8203,0.7549,Extreme discontinuity; model cannot replicate 14.7% spike
+post_covid_norm,2022-01..2026-02,49,0.2211,0.7896,Same calendar period as original_oos; the regime the model is built for

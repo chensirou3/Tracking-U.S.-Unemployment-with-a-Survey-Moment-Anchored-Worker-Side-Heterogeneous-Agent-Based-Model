@@ -1,0 +1,6 @@
+model,OOS_UR_RMSE_pp,seed_sd_pp,Delta_vs_Full_pp,interpretation
+Full heterogeneous ABM,0.2731,0.0233,0.0,reference
+No Search Friction ABM,1.0854,0.0107,0.8123,dimension is structurally hard to replace
+No Liquidity Fragility ABM,0.3776,0.0453,0.1046,mild loss from removing this dimension
+No Housing Mobility ABM,0.2369,0.0163,-0.0362,matches or beats Full after recalibration
+No Search-Liquidity-Housing ABM,0.7025,0.0147,0.4294,dimension is structurally hard to replace

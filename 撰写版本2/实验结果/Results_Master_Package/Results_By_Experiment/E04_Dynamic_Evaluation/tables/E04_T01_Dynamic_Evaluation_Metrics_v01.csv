@@ -1,0 +1,17 @@
+metric,value,unit,source
+Window,2022-01..2026-02,calendar,fix6.1/regime_metrics.json
+Months,49,count,
+Seeds,5,count,"{42,137,2024,888,1234}"
+UR RMSE (mean),0.2211,pp,
+UR RMSE SD across seeds,0.0068,pp,
+UR MAE,0.1629,pp,
+UR correlation with observed,0.7896,decimal,
+UR bias (sim - obs),-0.0425,pp,
+UR max absolute error,0.6641,pp,
+UR simulated mean,3.8596,pp,
+UR observed mean,3.902,pp,
+LFPR RMSE,2.2743,pp,
+LFPR bias,2.2537,pp,
+EPOP RMSE,2.2141,pp,
+EPOP bias,2.1941,pp,
+Seed-level CV,3.079,percent,

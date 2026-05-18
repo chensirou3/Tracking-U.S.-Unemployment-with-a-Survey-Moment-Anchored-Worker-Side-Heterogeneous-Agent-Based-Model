@@ -1,0 +1,234 @@
+% =============================================================================
+% References.bib  —  skeleton bibliography for the rewritten paper
+% =============================================================================
+% This file resolves P1 item #21. It contains placeholder entries for every
+% citation the rewritten manuscript currently anticipates. Entries marked
+% [VERIFY] need their volume/issue/pages/DOI confirmed before submission.
+%
+% Organisation:
+%   1. Data sources (FRED + SCE)
+%   2. Macro / labor benchmarks used in fix6.4
+%   3. ABM / heterogeneous-agent literature
+%   4. Forecasting methodology
+% =============================================================================
+
+
+% ------------------------------------------------------------------ 1. DATA --
+@misc{fred_unrate,
+  author       = {{U.S. Bureau of Labor Statistics}},
+  title        = {Unemployment Rate ({UNRATE})},
+  howpublished = {Retrieved from FRED, Federal Reserve Bank of St. Louis},
+  year         = {2026},
+  note         = {Accessed via \url{https://fred.stlouisfed.org/series/UNRATE}}
+}
+
+@misc{fred_civpart,
+  author       = {{U.S. Bureau of Labor Statistics}},
+  title        = {Labor Force Participation Rate ({CIVPART})},
+  howpublished = {Retrieved from FRED, Federal Reserve Bank of St. Louis},
+  year         = {2026},
+  note         = {Accessed via \url{https://fred.stlouisfed.org/series/CIVPART}}
+}
+
+@misc{fred_emratio,
+  author       = {{U.S. Bureau of Labor Statistics}},
+  title        = {Employment-Population Ratio ({EMRATIO})},
+  howpublished = {Retrieved from FRED, Federal Reserve Bank of St. Louis},
+  year         = {2026},
+  note         = {Accessed via \url{https://fred.stlouisfed.org/series/EMRATIO}}
+}
+
+@misc{fred_jtsjor,
+  author       = {{U.S. Bureau of Labor Statistics}},
+  title        = {Job Openings: Total Nonfarm, Rate ({JTSJOR})},
+  howpublished = {JOLTS series via FRED},
+  year         = {2026}
+}
+
+@misc{fred_jtsldr,
+  author       = {{U.S. Bureau of Labor Statistics}},
+  title        = {Layoffs and Discharges: Total Nonfarm, Rate ({JTSLDR})},
+  howpublished = {JOLTS series via FRED},
+  year         = {2026}
+}
+
+@misc{fred_ces,
+  author       = {{U.S. Bureau of Labor Statistics}},
+  title        = {Average Hourly Earnings of All Employees, Total Private,
+                  Percent Change from Year Ago ({CES0500000003\_PC1})},
+  howpublished = {Current Employment Statistics via FRED},
+  year         = {2026}
+}
+
+@misc{fred_fedfunds,
+  author       = {{Board of Governors of the Federal Reserve System}},
+  title        = {Effective Federal Funds Rate ({FEDFUNDS})},
+  howpublished = {Retrieved from FRED},
+  year         = {2026}
+}
+
+@misc{nyfed_sce_core,
+  author       = {{Federal Reserve Bank of New York}},
+  title        = {Survey of Consumer Expectations — Core Microdata Public Release},
+  howpublished = {FRBNY},
+  year         = {2025},
+  note         = {Codebook and microdata files \texttt{FRBNY-SCE-Public-Microdata-Complete-13-16}, \texttt{-17-19}, \texttt{-20-present}}
+}
+
+@misc{nyfed_sce_lm,
+  author       = {{Federal Reserve Bank of New York}},
+  title        = {Survey of Consumer Expectations — Labor Market Module},
+  howpublished = {FRBNY},
+  year         = {2025},
+  note         = {Annual and quarterly microdata releases}
+}
+
+@misc{nyfed_sce_spending,
+  author       = {{Federal Reserve Bank of New York}},
+  title        = {Survey of Consumer Expectations — Household Spending Module},
+  howpublished = {FRBNY},
+  year         = {2025}
+}
+
+@misc{nyfed_sce_housing,
+  author       = {{Federal Reserve Bank of New York}},
+  title        = {Survey of Consumer Expectations — Housing Module},
+  howpublished = {FRBNY},
+  year         = {2025}
+}
+
+
+% ----------------------------------------------- 2. BENCHMARK METHODOLOGY --
+@book{hyndman_athanasopoulos,
+  author    = {Hyndman, Rob J. and Athanasopoulos, George},
+  title     = {Forecasting: Principles and Practice},
+  edition   = {3},
+  publisher = {OTexts},
+  year      = {2021}
+}
+
+@article{beveridge_curve_classic,
+  author = {Blanchard, Olivier J. and Diamond, Peter},
+  title  = {The Beveridge Curve},
+  journal= {Brookings Papers on Economic Activity},
+  year   = {1989},
+  pages  = {1--76}
+}
+
+@article{dmp_model,
+  author  = {Mortensen, Dale T. and Pissarides, Christopher A.},
+  title   = {Job Creation and Job Destruction in the Theory of Unemployment},
+  journal = {Review of Economic Studies},
+  volume  = {61}, number = {3}, pages = {397--415}, year = {1994}
+}
+
+@article{shimer_matching,
+  author  = {Shimer, Robert},
+  title   = {The Cyclical Behavior of Equilibrium Unemployment and Vacancies},
+  journal = {American Economic Review},
+  volume  = {95}, number = {1}, pages = {25--49}, year = {2005}
+}
+
+
+% --------------------------------------- 3. ABM / HETEROGENEOUS-AGENT LIT --
+@article{kaplan_violante_2014,
+  author = {Kaplan, Greg and Violante, Giovanni L.},
+  title  = {A Model of the Consumption Response to Fiscal Stimulus Payments},
+  journal= {Econometrica},
+  volume = {82}, number = {4}, pages = {1199--1239}, year = {2014}
+}
+
+@article{kaplan_moll_violante_2018,
+  author  = {Kaplan, Greg and Moll, Benjamin and Violante, Giovanni L.},
+  title   = {Monetary Policy According to {HANK}},
+  journal = {American Economic Review},
+  volume  = {108}, number = {3}, pages = {697--743}, year = {2018}
+}
+
+@article{auclert_hank,
+  author  = {Auclert, Adrien},
+  title   = {Monetary Policy and the Redistribution Channel},
+  journal = {American Economic Review},
+  volume  = {109}, number = {6}, pages = {2333--2367}, year = {2019}
+}
+
+@incollection{tesfatsion_handbook,
+  author    = {Tesfatsion, Leigh},
+  title     = {Agent-Based Computational Economics: A Constructive Approach to Economic Theory},
+  booktitle = {Handbook of Computational Economics},
+  volume    = {2}, publisher = {Elsevier}, year = {2006}, pages = {831--880}
+}
+
+@article{poledna_macroeconomic,
+  author  = {Poledna, Sebastian and Miess, Michael Gregor and Hommes, Cars and Rabitsch, Katrin},
+  title   = {Economic Forecasting with an Agent-Based Model},
+  journal = {European Economic Review},
+  year    = {2023}, note = {[VERIFY volume / pages]}
+}
+
+@article{dawid_jamel,
+  author  = {Dawid, Herbert and Gemkow, Simon and Harting, Philipp and van der Hoog, Sander and Neugart, Michael},
+  title   = {{Agent}-Based Macroeconomic Modeling and Policy Analysis: The {Eurace@Unibi} Model},
+  journal = {Handbook of Computational Economics},
+  year    = {2018}, volume = {4}
+}
+
+@article{farmer_foley,
+  author  = {Farmer, J. Doyne and Foley, Duncan},
+  title   = {The Economy Needs Agent-Based Modelling},
+  journal = {Nature},
+  volume  = {460}, pages = {685--686}, year = {2009}
+}
+
+@article{aspc_haldane,
+  author  = {Haldane, Andrew G. and Turrell, Arthur E.},
+  title   = {An Interdisciplinary Model for Macroeconomics},
+  journal = {Oxford Review of Economic Policy},
+  volume  = {34}, number = {1-2}, pages = {219--251}, year = {2018}
+}
+
+
+% ----------------------------------------- 4. FORECASTING & METHODOLOGY ----
+@article{diebold_mariano,
+  author  = {Diebold, Francis X. and Mariano, Roberto S.},
+  title   = {Comparing Predictive Accuracy},
+  journal = {Journal of Business {\&} Economic Statistics},
+  volume  = {13}, number = {3}, pages = {253--263}, year = {1995}
+}
+
+@article{stock_watson_factor,
+  author  = {Stock, James H. and Watson, Mark W.},
+  title   = {Forecasting Using Principal Components from a Large Number of Predictors},
+  journal = {Journal of the American Statistical Association},
+  volume  = {97}, pages = {1167--1179}, year = {2002}
+}
+
+@article{barnichon_garda,
+  author  = {Barnichon, Regis and Garda, Paula},
+  title   = {Forecasting Unemployment in Real Time},
+  journal = {Federal Reserve Bank of San Francisco Working Paper},
+  year    = {2016}, note = {[VERIFY series/number]}
+}
+
+@article{transtrum_sloppy,
+  author  = {Transtrum, Mark K. and Machta, Benjamin B. and Brown, Kevin S.
+             and Daniels, Bryan C. and Myers, Christopher R. and Sethna, James P.},
+  title   = {Perspective: Sloppiness and emergent theories in physics,
+             biology, and beyond},
+  journal = {Journal of Chemical Physics},
+  volume  = {143}, number = {1}, pages = {010901}, year = {2015}
+}
+
+@article{gourieroux_msm,
+  author  = {Gouri{\'e}roux, Christian and Monfort, Alain},
+  title   = {Simulation-Based Econometric Methods},
+  journal = {CORE Lectures, Oxford University Press},
+  year    = {1996}
+}
+
+
+% =============================================================================
+% End of skeleton. Items above marked [VERIFY] still need full bibliographic
+% confirmation. Add domain-specific references (e.g. local-labor-market
+% literature, COVID-19 unemployment papers) as the manuscript text accrues.
+% =============================================================================

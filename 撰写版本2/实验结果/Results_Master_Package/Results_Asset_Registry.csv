@@ -1,0 +1,38 @@
+Asset ID,Asset type,Experiment-order path,Section-order path,Source file / old name,Section ID,Paper ID,Status
+S06_01_T01,Table (paper-ready),Results_By_Experiment/E04_Dynamic_Evaluation/tables/E04_T01_Dynamic_Metrics_v01.csv,Results_PaperReady_Tables/S06_01_T01_Dynamic_Regime_Performance__E4_E5_v01.csv,fix6.1/regime_metrics.json + fix6.2/reeval_metrics.json,S06_01,E4;E5,READY
+S06_01_F01A,Figure (paper-ready),Results_By_Experiment/E04_Dynamic_Evaluation/figures/E04_F01_Observed_vs_Simulated_UR_v01.png,Results_PaperReady_Figures/S06_01_F01A_Observed_vs_Simulated_UR_Full__E4_v01.png,fix6.2/reeval_trajectories.npz,S06_01,E4,READY
+S06_01_F01B,Figure (paper-ready),Results_By_Experiment/E04_Dynamic_Evaluation/figures/E04_F01_Observed_vs_Simulated_UR_v01.png,Results_PaperReady_Figures/S06_01_F01B_Observed_vs_Simulated_UR_MainEval__E4_v01.png,fix6.2/reeval_trajectories.npz,S06_01,E4,READY
+S06_01_F02A,Figure (paper-ready),Results_By_Experiment/E05_Regime_Specific_Evaluation/figures/E05_F01_Regime_RMSE_Bar_v01.png,Results_PaperReady_Figures/S06_01_F02A_Regime_RMSE_Bar__E5_v01.png,fix6.1/regime_metrics.json + fix6.2/reeval_metrics.json (headline bar),S06_01,E5,READY
+S06_01_F02B,Figure (paper-ready),Results_By_Experiment/E05_Regime_Specific_Evaluation/figures/E05_F01_Regime_RMSE_Bar_v01.png,Results_PaperReady_Figures/S06_01_F02B_Regime_Bias_Bar__E5_v01.png,fix6.1/regime_metrics.json + fix6.2/reeval_metrics.json (headline bar),S06_01,E5,READY
+S06_02_T01,Table (paper-ready),Results_By_Experiment/E06_Internal_Control_Comparison/tables/E06_T01_Control_Comparison_v01.csv,Results_PaperReady_Tables/S06_02_T01_Internal_Control_Comparison__E6_v01.csv,fix6.2/tables/table1_variant_summary.csv,S06_02,E6,READY
+S06_02_T02,Table (paper-ready),Results_By_Experiment/E07_Source_of_Advantage_Decomposition/tables/E07_T01_Source_of_Advantage_v01.csv,Results_PaperReady_Tables/S06_02_T02_Source_of_Advantage__E7_v01.csv,fix6.2/tables/table4_source_of_advantage.csv,S06_02,E7,READY
+S06_02_F01,Figure (paper-ready),Results_By_Experiment/E06_Internal_Control_Comparison/figures/E06_F01_Control_RMSE_Bar_v01.png,Results_PaperReady_Figures/S06_02_F01_Control_RMSE_Bar__E6_v01.png,fix6.2/reeval_metrics.json,S06_02,E6,READY
+S06_03_T01,Table (paper-ready),Results_By_Experiment/E08_Heterogeneity_Ablation/tables/E08_T01_Recalibrated_Ablation_v01.csv,Results_PaperReady_Tables/S06_03_T01_Recalibrated_Ablation__E8_v01.csv,fix6.3/tables/table2_post_covid_ablation.csv,S06_03,E8,READY
+S06_03_T02,Table (paper-ready),Results_By_Experiment/E09_Heterogeneity_Ladder/tables/E09_T01_Heterogeneity_Ladder_v01.csv,Results_PaperReady_Tables/S06_03_T02_Heterogeneity_Ladder__E9_v01.csv,6.3/ladder_metrics.json,S06_03,E9,READY
+S06_03_F01,Figure (paper-ready),Results_By_Experiment/E08_Heterogeneity_Ablation/figures/E08_F01_Ablation_RMSE_Bar_v01.png,Results_PaperReady_Figures/S06_03_F01_Ablation_RMSE_Bar__E8_v01.png,fix6.3/reeval_metrics.json,S06_03,E8,READY
+S06_03_F02,Figure (paper-ready),Results_By_Experiment/E09_Heterogeneity_Ladder/figures/E09_F01_Ladder_RMSE_Path_v01.png,Results_PaperReady_Figures/S06_03_F02_Ladder_RMSE_Path__E9_v01.png,6.3/ladder_series.npz,S06_03,E9,READY
+S06_04_T01,Table (paper-ready),Results_By_Experiment/E10_Forecast_Benchmark_Comparison/tables/E10_T01_Dynamic_Benchmark_Comparison_v01.csv,Results_PaperReady_Tables/S06_04_T01_Dynamic_Benchmark_Comparison__E10_v01.csv,fix6.4/tables/table1_main_postcovid_benchmark.csv,S06_04,E10,READY
+S06_04_F01,Figure (paper-ready),Results_By_Experiment/E10_Forecast_Benchmark_Comparison/figures/E10_F01_Benchmark_RMSE_Bar_v01.png,Results_PaperReady_Figures/S06_04_F01_Benchmark_RMSE_Bar__E10_v01.png,fix6.4/benchmark_metrics.json,S06_04,E10,READY
+S06_05_T01,Table (paper-ready),(see E11/E12/E13 audit-folder tables),Results_PaperReady_Tables/S06_05_T01_Robustness_Summary__E11_E12_E13_v01.csv,6.5/robustness_metrics.json + 6.5/tables/,S06_05,E11;E12;E13,READY
+S06_05_F01A,Figure (paper-ready),Results_By_Experiment/E11_Training_Window_Sensitivity/figures/E11_F01_Training_Window_Sensitivity_v01.png,Results_PaperReady_Figures/S06_05_F01A_Training_Window__E11_v01.png,6.5/tables/table2_training_window.csv,S06_05,E11,READY
+S06_05_F01B,Figure (paper-ready),Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/figures/E12_F01_Forecast_Horizon_Sensitivity_v01.png,Results_PaperReady_Figures/S06_05_F01B_Horizon_Decay__E12_v01.png,6.5/tables/table3_horizon.csv,S06_05,E12,READY
+S06_05_F01C,Figure (paper-ready),Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/figures/E12_F02_Agent_Count_Convergence_v01.png,Results_PaperReady_Figures/S06_05_F01C_Agent_Count_Plateau__E12_v01.png,6.5/tables/table4_agent_count.csv,S06_05,E12,READY
+S06_05_F01D,Figure (paper-ready),Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/figures/E13_F02_Parameter_ID_Heatmap_v01.png,Results_PaperReady_Figures/S06_05_F01D_Parameter_ID__E13_v01.png,6.5/robustness_metrics.json (param_lens),S06_05,E13,READY
+E01_R,Report,Results_By_Experiment/E01_Synthetic_Population_Construction/E01_Report.md,—,撰写版本2/ABM_P1_Resolution_Report.md §4,—,E1,READY
+E02_R,Report,Results_By_Experiment/E02_Baseline_Stability_Check/E02_Report.md,—,fix6.2/checkpoints/V_Full_progress.csv,—,E2,READY WITH CAVEAT
+E03_R,Report,Results_By_Experiment/E03_Calibration_Setup/E03_Report.md,—,fix6.2/run_fix6_2_calibrate.py,—,E3,READY
+E04_R,Report,Results_By_Experiment/E04_Dynamic_Evaluation/E04_Report.md,—,fix6.2/run_fix6_2_reeval.py,S06_01,E4,READY
+E05_R,Report,Results_By_Experiment/E05_Regime_Specific_Evaluation/E05_Report.md,—,fix6.1/run_fix6_1_regime.py,S06_01,E5,READY
+E06_R,Report,Results_By_Experiment/E06_Internal_Control_Comparison/E06_Report.md,—,fix6.2/run_fix6_2_calibrate.py,S06_02,E6,READY
+E07_R,Report,Results_By_Experiment/E07_Source_of_Advantage_Decomposition/E07_Report.md,—,fix6.2/tables/table4_source_of_advantage.csv,S06_02,E7,READY
+E08_R,Report,Results_By_Experiment/E08_Heterogeneity_Ablation/E08_Report.md,—,fix6.3/run_fix6_3_calibrate.py,S06_03,E8,READY
+E09_R,Report,Results_By_Experiment/E09_Heterogeneity_Ladder/E09_Report.md,—,6.3/run_6_3_packageC_ladder.py,S06_03,E9,READY
+E10_R,Report,Results_By_Experiment/E10_Forecast_Benchmark_Comparison/E10_Report.md,—,fix6.4/run_fix6_4_benchmarks.py,S06_04,E10,READY
+E11_R,Report,Results_By_Experiment/E11_Training_Window_Sensitivity/E11_Report.md,—,包A_训练窗口敏感性/run_packageA.py,S06_05,E11,READY
+E12_R,Report,Results_By_Experiment/E12_Forecast_Horizon_and_Agent_Count_Sensitivity/E12_Report.md,—,包B/D archived in 6.5 pipeline,S06_05,E12,READY
+E13_R,Report,Results_By_Experiment/E13_Calibration_Method_and_Parameter_ID_Sensitivity/E13_Report.md,—,包E_校准方法敏感性/run_packageE.py,S06_05,E13,READY
+S06_01_R,Report,—,Results_By_Section/S06_01_Dynamic_and_Regime_Specific_Performance/S06_01_Report.md,(synthesis),S06_01,E4;E5,READY
+S06_02_R,Report,—,Results_By_Section/S06_02_Internal_Controls_and_Source_of_Advantage/S06_02_Report.md,(synthesis),S06_02,E6;E7,READY
+S06_03_R,Report,—,Results_By_Section/S06_03_Recalibrated_Heterogeneity_Ablations/S06_03_Report.md,(synthesis),S06_03,E8;E9,READY
+S06_04_R,Report,—,Results_By_Section/S06_04_Forecast_Benchmark_Comparison/S06_04_Report.md,(synthesis),S06_04,E10,READY
+S06_05_R,Report,—,Results_By_Section/S06_05_Robustness_and_Sensitivity/S06_05_Report.md,(synthesis),S06_05,E11;E12;E13,READY
