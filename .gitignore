@@ -6,10 +6,14 @@ real_data_experiments/
 SCE_Data/
 
 # === Phase3 intermediate outputs (289 MB; includes 280 MB agent_decision_data.npz) ===
-Phase3_Output/
-# Keep the small specs and schema documents inside Phase3_Output:
+# Use directory-contents ignore (Phase3_Output/*) so we can re-include specific
+# small anchor files via ! patterns below.
+Phase3_Output/*
 !Phase3_Output/*.md
 !Phase3_Output/output_schema.json
+!Phase3_Output/phase6/
+Phase3_Output/phase6/*
+!Phase3_Output/phase6/candidate_*.json
 
 # === Literature PDFs (19 MB x 2 duplicates) ===
 **/abm文献/

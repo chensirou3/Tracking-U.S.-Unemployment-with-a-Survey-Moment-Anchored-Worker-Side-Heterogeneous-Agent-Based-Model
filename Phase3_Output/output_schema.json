@@ -1,0 +1,70 @@
+{
+  "variables": {
+    "unemployment_rate": {
+      "definition": "U/(E+U)",
+      "type": "core"
+    },
+    "lfpr": {
+      "definition": "(E+U)/N_total",
+      "type": "layer1"
+    },
+    "epop": {
+      "definition": "E/N_total",
+      "type": "layer1"
+    },
+    "eu_rate": {
+      "definition": "E->U transitions / E_prev",
+      "type": "layer1"
+    },
+    "ue_rate": {
+      "definition": "U->E transitions / U_prev",
+      "type": "layer1"
+    },
+    "en_rate": {
+      "definition": "E->N transitions / E_prev",
+      "type": "layer1"
+    },
+    "un_rate": {
+      "definition": "U->N transitions / U_prev",
+      "type": "layer1"
+    },
+    "nu_rate": {
+      "definition": "N->U transitions / N_prev",
+      "type": "layer1"
+    },
+    "avg_income": {
+      "definition": "mean household income ($k/yr)",
+      "type": "layer2"
+    },
+    "avg_cash_buffer": {
+      "definition": "mean buffer (months)",
+      "type": "layer2"
+    },
+    "avg_search_intensity": {
+      "definition": "mean search hrs/wk (U only)",
+      "type": "layer2"
+    },
+    "avg_debt_stress": {
+      "definition": "mean debt stress [0,1]",
+      "type": "layer2"
+    },
+    "h2m_share": {
+      "definition": "fraction Hand-to-Mouth",
+      "type": "layer2"
+    },
+    "avg_fragility": {
+      "definition": "mean labor fragility [0,1]",
+      "type": "layer2"
+    },
+    "avg_unemp_dur": {
+      "definition": "mean unemployment duration (months)",
+      "type": "layer2"
+    }
+  },
+  "scenarios": [
+    "baseline",
+    "recession"
+  ],
+  "T": 120,
+  "N": 100000
+}
